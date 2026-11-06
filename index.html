@@ -4,159 +4,248 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viajes Horizonte</title>
-  <style>
-    :root {
-      --azul: #0b4f6c;
-      --turquesa: #01baef;
-      --arena: #fbf5ec;
-      --coral: #f26b4f;
-      --texto: #22303c;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      color: var(--texto);
-      background: var(--arena);
-    }
-
-    /* Barra de navegación */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-    }
-    .logo { font-size: 1.4rem; font-weight: 700; color: var(--azul); text-decoration: none; }
-    .logo span { color: var(--coral); }
-    nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
-    nav a { color: var(--texto); text-decoration: none; }
-    nav a:hover { color: var(--coral); }
-
-    /* Portada */
-    .hero {
-      padding: 96px 24px;
-      text-align: center;
-      color: #fff;
-      background: linear-gradient(135deg, var(--azul), var(--turquesa));
-    }
-    .hero h1 { font-size: 2.6rem; margin: 0 0 12px; }
-    .hero p { font-size: 1.15rem; margin: 0 auto 28px; max-width: 560px; opacity: .95; }
-    .boton {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 999px;
-      background: var(--coral);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .boton:hover { filter: brightness(1.08); }
-
-    /* Itinerarios */
-    main { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
-    main h2 { text-align: center; font-size: 2rem; color: var(--azul); margin: 0 0 8px; }
-    .subtitulo { text-align: center; margin: 0 0 40px; color: #5a6b78; }
-    .viajes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
-    .tarjeta {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,.08);
-      display: flex;
-      flex-direction: column;
-      transition: transform .2s;
-    }
-    .tarjeta:hover { transform: translateY(-4px); }
-    .imagen {
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
-    .cancun { background: linear-gradient(135deg, #00c9a7, #4fd1ff); }
-    .paris  { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
-    .machu  { background: linear-gradient(135deg, #56ab2f, #a8e063); }
-    .contenido { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
-    .contenido h3 { margin: 0 0 4px; font-size: 1.3rem; }
-    .pais { margin: 0 0 12px; color: #5a6b78; font-size: .95rem; }
-    .detalles { list-style: none; padding: 0; margin: 0 0 20px; font-size: .95rem; }
-    .detalles li { margin: 4px 0; }
-    .contenido .boton { margin-top: auto; text-align: center; }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      background: var(--azul);
-      color: #cfe6f0;
-      font-size: .9rem;
-    }
-
-    @media (max-width: 600px) {
-      nav { flex-direction: column; gap: 12px; padding: 16px; }
-      .hero { padding: 64px 16px; }
-      .hero h1 { font-size: 2rem; }
-    }
-  </style>
+  <meta name="description" content="Itinerarios de viaje, guías descargables y asesoría personalizada de Viajes Horizonte.">
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <nav>
-    <a href="#" class="logo">Viajes <span>Horizonte</span></a>
+    <a href="index.html" class="logo">Viajes <span>Horizonte</span></a>
     <ul>
-      <li><a href="#">Inicio</a></li>
+      <li><a href="#inicio" class="activo">Inicio</a></li>
+      <li><a href="#por-que-viajar">Por qué viajar</a></li>
       <li><a href="#itinerarios">Itinerarios</a></li>
+      <li><a href="#documentos">Documentos</a></li>
+      <li><a href="cuestionario.html">Cuestionario</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
-  <header class="hero">
+  <header class="hero" id="inicio">
     <h1>Descubre tu próximo destino</h1>
-    <p>Consulta y descarga los itinerarios completos de nuestros viajes.</p>
-    <a href="#itinerarios" class="boton">Ver itinerarios</a>
+    <p>Consulta y descarga los itinerarios completos de nuestros viajes, guías prácticas y plantillas para planear tu aventura.</p>
+    <div class="acciones">
+      <a href="#itinerarios" class="boton">Ver itinerarios</a>
+      <a href="cuestionario.html" class="boton secundario">Quiero más información</a>
+    </div>
   </header>
 
-  <main id="itinerarios">
-    <h2>Nuestros viajes</h2>
-    <p class="subtitulo">Haz clic en un viaje para abrir su itinerario en PDF.</p>
+  <!-- La importancia de viajar -->
+  <div class="banda">
+    <section id="por-que-viajar">
+      <h2>La importancia de viajar</h2>
+      <p class="subtitulo">Viajar no es solo tomar vacaciones: es una de las mejores inversiones que puedes hacer en ti mismo. Estas son algunas razones.</p>
 
-    <div class="viajes">
-      <article class="tarjeta">
-        <div class="imagen cancun">🏝️</div>
-        <div class="contenido">
-          <h3>Cancún</h3>
-          <p class="pais">México</p>
-          <ul class="detalles">
-            <li>📅 7 días / 6 noches</li>
-            <li>✈️ Vuelo + hotel todo incluido</li>
-          </ul>
-          <a href="pdfs/itinerario-cancun.pdf" target="_blank" class="boton">Ver itinerario (PDF)</a>
-        </div>
-      </article>
+      <div class="beneficios">
+        <article class="beneficio">
+          <div class="icono">🧠</div>
+          <h3>Abre la mente</h3>
+          <p>Conocer otras culturas, idiomas y formas de vivir rompe prejuicios y te ayuda a ver el mundo, y tus propios problemas, desde otra perspectiva.</p>
+        </article>
+        <article class="beneficio">
+          <div class="icono">💆</div>
+          <h3>Reduce el estrés</h3>
+          <p>Salir de la rutina permite descansar de verdad. Muchas personas regresan de un viaje con más energía, mejor ánimo y más creatividad.</p>
+        </article>
+        <article class="beneficio">
+          <div class="icono">🤝</div>
+          <h3>Fortalece relaciones</h3>
+          <p>Las experiencias compartidas con pareja, familia o amigos crean recuerdos que unen más que cualquier objeto material.</p>
+        </article>
+        <article class="beneficio">
+          <div class="icono">🌱</div>
+          <h3>Te hace crecer</h3>
+          <p>Resolver imprevistos, orientarte en una ciudad nueva o pedir ayuda en otro idioma desarrolla independencia, paciencia y confianza.</p>
+        </article>
+        <article class="beneficio">
+          <div class="icono">📚</div>
+          <h3>Aprendes de verdad</h3>
+          <p>La historia, el arte y la geografía se entienden mejor frente a una pirámide maya o dentro del Louvre que en cualquier libro.</p>
+        </article>
+        <article class="beneficio">
+          <div class="icono">🌎</div>
+          <h3>Apoya a comunidades</h3>
+          <p>El turismo responsable genera empleo y ayuda a conservar el patrimonio natural y cultural de los lugares que visitas.</p>
+        </article>
+      </div>
 
-      <article class="tarjeta">
-        <div class="imagen paris">🗼</div>
-        <div class="contenido">
-          <h3>París</h3>
-          <p class="pais">Francia</p>
-          <ul class="detalles">
-            <li>📅 10 días / 9 noches</li>
-            <li>✈️ Vuelo + hotel + tours</li>
-          </ul>
-          <a href="pdfs/itinerario-paris.pdf" target="_blank" class="boton">Ver itinerario (PDF)</a>
+      <blockquote class="cita">
+        “El mundo es un libro, y quienes no viajan leen solo una página.”
+        <cite>— Atribuida a San Agustín</cite>
+      </blockquote>
+
+      <div class="cifras">
+        <div class="cifra"><strong>+2,000</strong><span>viajeros atendidos</span></div>
+        <div class="cifra"><strong>15</strong><span>años de experiencia</span></div>
+        <div class="cifra"><strong>98%</strong><span>volverían a viajar con nosotros</span></div>
+        <div class="cifra"><strong>24/7</strong><span>asistencia durante tu viaje</span></div>
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Consejos para aprovechar tu viaje</h2>
+    <p class="subtitulo">Planear bien es la mitad de la experiencia.</p>
+    <ul class="consejos">
+      <li><strong>Reserva con anticipación:</strong> vuelos y hoteles suelen ser más baratos entre 2 y 4 meses antes.</li>
+      <li><strong>Revisa tus documentos:</strong> confirma la vigencia de tu pasaporte (mínimo 6 meses) y los requisitos de entrada.</li>
+      <li><strong>Contrata un seguro de viajero:</strong> una emergencia médica en el extranjero puede ser muy costosa.</li>
+      <li><strong>Haz un presupuesto:</strong> usa nuestra <a href="#documentos">plantilla de Excel</a> para no llevarte sorpresas.</li>
+      <li><strong>Viaja ligero:</strong> nuestra <a href="#documentos">lista de equipaje</a> te ayuda a llevar solo lo necesario.</li>
+      <li><strong>Respeta la cultura local:</strong> aprende algunas palabras del idioma y las costumbres básicas del lugar.</li>
+    </ul>
+  </section>
+
+  <!-- Itinerarios -->
+  <div class="banda">
+    <section id="itinerarios">
+      <h2>Nuestros viajes</h2>
+      <p class="subtitulo">Abre el itinerario en PDF o descárgalo en Word para editarlo. Dentro de cada PDF encontrarás enlaces a secciones exclusivas con precios, promociones y datos curiosos.</p>
+
+      <div class="viajes">
+        <article class="tarjeta">
+          <div class="imagen cancun">🏝️</div>
+          <div class="contenido">
+            <h3>Cancún</h3>
+            <p class="pais">México</p>
+            <ul class="detalles">
+              <li>📅 7 días / 6 noches</li>
+              <li>✈️ Vuelo + hotel todo incluido</li>
+              <li>🌊 Isla Mujeres, Chichén Itzá y Tulum</li>
+            </ul>
+            <p class="nota-pdf">🔒 Los precios y tu código de descuento están dentro del PDF.</p>
+            <div class="acciones">
+              <a href="pdfs/itinerario-cancun.pdf" target="_blank" rel="noopener" class="boton">Ver itinerario (PDF)</a>
+              <a href="documentos/itinerario-cancun.docx" download class="boton contorno">Descargar en Word</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="imagen paris">🗼</div>
+          <div class="contenido">
+            <h3>París</h3>
+            <p class="pais">Francia</p>
+            <ul class="detalles">
+              <li>📅 10 días / 9 noches</li>
+              <li>✈️ Vuelo + hotel + tours</li>
+              <li>🎨 Louvre, Versalles y crucero por el Sena</li>
+            </ul>
+            <p class="nota-pdf">🔒 Los precios y tu código de descuento están dentro del PDF.</p>
+            <div class="acciones">
+              <a href="pdfs/itinerario-paris.pdf" target="_blank" rel="noopener" class="boton">Ver itinerario (PDF)</a>
+              <a href="documentos/itinerario-paris.docx" download class="boton contorno">Descargar en Word</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- Documentos descargables -->
+  <section id="documentos">
+    <h2>Documentos y recursos</h2>
+    <p class="subtitulo">Guías y plantillas gratuitas para preparar tu viaje. Puedes abrirlas en el navegador o descargarlas.</p>
+
+    <div class="documentos">
+      <div class="documento">
+        <div class="tipo pdf">PDF</div>
+        <div class="info">
+          <h3>Itinerario – Cancún, México</h3>
+          <p>Plan día a día, qué incluye y recomendaciones. Contiene enlaces a precios exclusivos.</p>
         </div>
-      </article>
+        <div class="acciones">
+          <a class="boton chico" href="pdfs/itinerario-cancun.pdf" target="_blank" rel="noopener">Abrir</a>
+          <a class="boton chico contorno" href="pdfs/itinerario-cancun.pdf" download>Descargar</a>
+        </div>
+      </div>
+
+      <div class="documento">
+        <div class="tipo pdf">PDF</div>
+        <div class="info">
+          <h3>Itinerario – París, Francia</h3>
+          <p>Plan día a día, qué incluye y recomendaciones. Contiene enlaces a precios exclusivos.</p>
+        </div>
+        <div class="acciones">
+          <a class="boton chico" href="pdfs/itinerario-paris.pdf" target="_blank" rel="noopener">Abrir</a>
+          <a class="boton chico contorno" href="pdfs/itinerario-paris.pdf" download>Descargar</a>
+        </div>
+      </div>
+
+      <div class="documento">
+        <div class="tipo docx">DOCX</div>
+        <div class="info">
+          <h3>Lista de equipaje</h3>
+          <p>Checklist en Word para playa y ciudad: ropa, documentos, salud y tecnología.</p>
+        </div>
+        <div class="acciones">
+          <a class="boton chico" data-abrir-office href="documentos/lista-de-equipaje.docx" target="_blank" rel="noopener">Abrir</a>
+          <a class="boton chico contorno" href="documentos/lista-de-equipaje.docx" download>Descargar</a>
+        </div>
+      </div>
+
+      <div class="documento">
+        <div class="tipo docx">DOCX</div>
+        <div class="info">
+          <h3>Requisitos y documentos de viaje</h3>
+          <p>Pasaporte, visas, seguro y trámites para viajar a México y a Europa.</p>
+        </div>
+        <div class="acciones">
+          <a class="boton chico" data-abrir-office href="documentos/requisitos-de-viaje.docx" target="_blank" rel="noopener">Abrir</a>
+          <a class="boton chico contorno" href="documentos/requisitos-de-viaje.docx" download>Descargar</a>
+        </div>
+      </div>
+
+      <div class="documento">
+        <div class="tipo xlsx">XLSX</div>
+        <div class="info">
+          <h3>Planificador de presupuesto</h3>
+          <p>Hoja de Excel con fórmulas: anota tus gastos y calcula el total por persona.</p>
+        </div>
+        <div class="acciones">
+          <a class="boton chico" data-abrir-office href="documentos/planificador-de-presupuesto.xlsx" target="_blank" rel="noopener">Abrir</a>
+          <a class="boton chico contorno" href="documentos/planificador-de-presupuesto.xlsx" download>Descargar</a>
+        </div>
+      </div>
+
+      <div class="documento">
+        <div class="tipo txt">TXT</div>
+        <div class="info">
+          <h3>Frases útiles en francés</h3>
+          <p>Saludos y frases básicas para moverte por París.</p>
+        </div>
+        <div class="acciones">
+          <a class="boton chico" href="documentos/frases-utiles-frances.txt" target="_blank" rel="noopener">Abrir</a>
+          <a class="boton chico contorno" href="documentos/frases-utiles-frances.txt" download>Descargar</a>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <section>
+    <div class="cta">
+      <h2>¿Te interesa alguno de nuestros viajes?</h2>
+      <p>Llena nuestro cuestionario con tus datos y preferencias y te enviaremos una cotización personalizada.</p>
+      <a href="cuestionario.html" class="boton secundario">Llenar cuestionario</a>
+    </div>
+  </section>
 
   <footer id="contacto">
-    © 2026 Viajes Horizonte · contacto@viajeshorizonte.com
+    © 2026 Viajes Horizonte · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a>
   </footer>
+
+  <script>
+    // Los archivos de Word y Excel no se pueden mostrar directamente en el navegador.
+    // Cuando la página está publicada (p. ej. GitHub Pages), "Abrir" usa el visor
+    // gratuito de Microsoft Office Online. En local, el archivo simplemente se descarga.
+    (function () {
+      var publico = /^https?:$/.test(location.protocol) &&
+                    !/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+      if (!publico) return;
+      document.querySelectorAll('[data-abrir-office]').forEach(function (a) {
+        var absoluta = new URL(a.getAttribute('href'), location.href).href;
+        a.href = 'https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(absoluta);
+      });
+    })();
+  </script>
 </body>
 </html>

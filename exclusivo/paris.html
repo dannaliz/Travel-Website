@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>París exclusivo</title>
+  <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="logo">Viajes <span>Horizonte</span></a>
+    <ul>
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../index.html#itinerarios">Itinerarios</a></li>
+      <li><a href="../cuestionario.html?destino=París">Cotizar</a></li>
+    </ul>
+  </nav>
+
+  <!-- Se muestra si alguien entra sin venir del PDF -->
+  <div class="bloqueado oculto" id="bloqueado">
+    <div class="icono">🔒</div>
+    <h2>Sección exclusiva</h2>
+    <p>Esta página solo está disponible desde el itinerario en PDF de París. Abre el PDF y usa los enlaces que aparecen dentro.</p>
+    <a class="boton" href="../pdfs/itinerario-paris.pdf" target="_blank" rel="noopener">Abrir itinerario de París</a>
+  </div>
+
+  <div id="exclusivo" class="oculto">
+    <header class="hero chico paris">
+      <span class="sello">🔓 Acceso exclusivo desde tu itinerario PDF</span>
+      <h1>París: precios y secretos</h1>
+      <p>Tarifas vigentes 2026–2027, promociones y datos curiosos que no encontrarás en el resto del sitio.</p>
+    </header>
+
+    <section id="precios">
+      <h2>Precios del paquete</h2>
+      <p class="subtitulo">Precio por persona en pesos mexicanos (MXN), saliendo de la Ciudad de México. 10 días / 9 noches.</p>
+      <div class="tabla-scroll">
+        <table class="tabla-precios">
+          <thead>
+            <tr><th>Temporada</th><th>Fechas</th><th>Habitación doble</th><th>Habitación sencilla</th><th>Menor (2–11 años)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Baja</td><td>Noviembre – marzo (excepto fiestas)</td><td class="precio">$46,500</td><td class="precio">$61,900</td><td class="precio">$31,800</td></tr>
+            <tr><td>Media</td><td>Abril – mayo, septiembre – octubre</td><td class="precio">$52,900</td><td class="precio">$70,400</td><td class="precio">$35,600</td></tr>
+            <tr><td>Alta</td><td>Junio – agosto, diciembre</td><td class="precio">$61,300</td><td class="precio">$82,700</td><td class="precio">$41,200</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="extras" style="padding-top:0">
+      <h2>Actividades opcionales</h2>
+      <p class="subtitulo">Precio por persona. Se reservan con tu asesor.</p>
+      <div class="tabla-scroll">
+        <table class="tabla-precios">
+          <thead><tr><th>Actividad</th><th>Duración</th><th>Precio</th></tr></thead>
+          <tbody>
+            <tr><td>Disneyland París (1 día, 2 parques)</td><td>Día completo</td><td class="precio">$3,900</td></tr>
+            <tr><td>Castillos del Valle del Loira</td><td>Día completo</td><td class="precio">$4,600</td></tr>
+            <tr><td>Show en el Moulin Rouge con champaña</td><td>2 horas</td><td class="precio">$3,300</td></tr>
+            <tr><td>Clase de cocina francesa (croissants y macarons)</td><td>3 horas</td><td class="precio">$2,450</td></tr>
+            <tr><td>Cena en crucero por el Sena</td><td>2.5 horas</td><td class="precio">$2,900</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="codigo">
+        Tu código de descuento por leer el itinerario:
+        <strong>HORIZONTE-PAR15</strong>
+        15% de descuento en actividades opcionales. Menciónalo en el cuestionario o a tu asesor.
+        <p style="margin:16px 0 0"><a class="boton" href="../cuestionario.html?destino=París">Cotizar con descuento</a></p>
+      </div>
+    </section>
+
+    <div class="banda">
+      <section id="curiosidades">
+        <h2>Cosas interesantes de París</h2>
+        <p class="subtitulo">Datos para presumir en tu viaje.</p>
+        <div class="curiosidades">
+          <div class="curiosidad"><h3>🗼 Una torre temporal</h3><p>La Torre Eiffel se construyó para la Exposición Universal de 1889 y debía desmontarse a los 20 años; se salvó por su utilidad como antena de radio.</p></div>
+          <div class="curiosidad"><h3>📏 Crece en verano</h3><p>Con el calor, el hierro se dilata y la torre puede “crecer” unos 15 centímetros.</p></div>
+          <div class="curiosidad"><h3>🖼️ Imposible verlo todo</h3><p>El Louvre tiene alrededor de 35,000 obras en exhibición; ver cada una 30 segundos te tomaría más de 12 días sin parar.</p></div>
+          <div class="curiosidad"><h3>💀 Otra ciudad bajo tierra</h3><p>Las Catacumbas guardan los restos de unos seis millones de personas en antiguas canteras de piedra caliza.</p></div>
+          <div class="curiosidad"><h3>🗽 La “hermana” de la Estatua de la Libertad</h3><p>En la Isla de los Cisnes, sobre el Sena, hay una réplica más pequeña de la estatua que Francia regaló a EE. UU.</p></div>
+          <div class="curiosidad"><h3>🥖 La baguette es patrimonio</h3><p>En 2022 la UNESCO declaró el saber hacer de la baguette como Patrimonio Cultural Inmaterial de la Humanidad.</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Viajes Horizonte · Precios sujetos a disponibilidad y tipo de cambio.
+  </footer>
+
+  <script>
+    // Acceso solo desde el PDF: los enlaces del PDF incluyen ?desde=pdf&clave=...
+    // (Esto oculta la sección a quien llega por otro lado; no es una protección real.)
+    (function () {
+      var CLAVE = 'par-2026';
+      var p = new URLSearchParams(location.search);
+      var ok = p.get('desde') === 'pdf' && p.get('clave') === CLAVE;
+      try {
+        if (ok) sessionStorage.setItem('acceso-' + CLAVE, '1');
+        else ok = sessionStorage.getItem('acceso-' + CLAVE) === '1';
+      } catch (e) {}
+      document.getElementById(ok ? 'exclusivo' : 'bloqueado').classList.remove('oculto');
+    })();
+  </script>
+</body>
+</html>
