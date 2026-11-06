@@ -226,8 +226,10 @@ def generar_pdf(clave):
         [BotonEnlace("Ver precios por temporada", url_exclusiva(clave, "precios"))],
         [BotonEnlace("Actividades opcionales y código de descuento", url_exclusiva(clave, "extras"))],
         [BotonEnlace("Datos curiosos del destino", url_exclusiva(clave, "curiosidades"), color=AZUL)],
-        [Paragraph("¿Listo para viajar? " + enlace("Llena el cuestionario",
-                   f"{SITIO}cuestionario.html?destino={quote(d['consulta'])}") + " y recibe tu cotización.", est["caja"])],
+        [Paragraph("Al abrirlas te pediremos tu nombre, tu correo y por qué quieres viajar (solo la primera vez).<br/>"
+                   "¿Listo para viajar? " + enlace("Pide tu cotización",
+                   "mailto:contacto@viajeshorizonte.com?subject=" + quote(f"Cotización {d['consulta']}"))
+                   + ".", est["caja"])],
     ], colWidths=[16.5 * cm])
     botones.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, -1), ARENA),

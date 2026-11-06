@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuestionario de viaje</title>
+  <title>Desbloquea recursos</title>
   <link rel="stylesheet" href="estilos.css">
+  <script src="acceso.js"></script>
 </head>
 <body>
   <nav>
@@ -13,181 +14,51 @@
       <li><a href="index.html">Inicio</a></li>
       <li><a href="index.html#por-que-viajar">Por qué viajar</a></li>
       <li><a href="index.html#itinerarios">Itinerarios</a></li>
-      <li><a href="index.html#documentos">Documentos</a></li>
-      <li><a href="cuestionario.html" class="activo">Cuestionario</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
     </ul>
   </nav>
 
   <header class="hero chico">
-    <h1>Cuéntanos sobre tu viaje</h1>
-    <p>Llena este cuestionario y un asesor te enviará información detallada y una cotización personalizada.</p>
+    <h1>Antes de continuar…</h1>
+    <p>Cuéntanos quién eres y por qué quieres viajar. A cambio, desbloqueas los precios de cada viaje y todos nuestros documentos y recursos.</p>
   </header>
 
   <section>
     <form class="cuestionario" id="formulario" novalidate>
       <fieldset>
-        <legend>1. Datos personales</legend>
+        <legend>Tus datos</legend>
         <div class="campos">
           <div class="campo">
-            <label for="nombre">Nombre(s) <span class="req">*</span></label>
-            <input type="text" id="nombre" name="Nombre" autocomplete="given-name" required>
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="apellidos">Apellidos <span class="req">*</span></label>
-            <input type="text" id="apellidos" name="Apellidos" autocomplete="family-name" required>
+            <label for="nombre">Nombre <span class="req">*</span></label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
             <span class="error"></span>
           </div>
           <div class="campo">
             <label for="correo">Correo electrónico <span class="req">*</span></label>
-            <input type="email" id="correo" name="Correo" autocomplete="email" required>
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="telefono">Teléfono <span class="req">*</span></label>
-            <input type="tel" id="telefono" name="Teléfono" autocomplete="tel" placeholder="55 1234 5678" pattern="[0-9 +()\-]{8,}" required>
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="nacimiento">Fecha de nacimiento</label>
-            <input type="date" id="nacimiento" name="Fecha de nacimiento">
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="ciudad">Ciudad de salida <span class="req">*</span></label>
-            <input type="text" id="ciudad" name="Ciudad de salida" placeholder="Ej. Ciudad de México" required>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
             <span class="error"></span>
           </div>
           <div class="campo completo">
-            <span class="etiqueta">¿Cuentas con pasaporte vigente? <span class="req">*</span></span>
-            <div class="opciones">
-              <label><input type="radio" name="Pasaporte vigente" value="Sí" required> Sí</label>
-              <label><input type="radio" name="Pasaporte vigente" value="No"> No</label>
-              <label><input type="radio" name="Pasaporte vigente" value="En trámite"> En trámite</label>
-            </div>
+            <label for="motivo">¿Por qué quieres viajar? <span class="req">*</span></label>
+            <textarea id="motivo" name="motivo" minlength="10" required
+              placeholder="Ej. Quiero conocer otras culturas, celebrar mi aniversario, descansar de la rutina…"></textarea>
             <span class="error"></span>
           </div>
         </div>
       </fieldset>
-
-      <fieldset>
-        <legend>2. Tu viaje</legend>
-        <div class="campos">
-          <div class="campo">
-            <label for="destino">Destino de interés <span class="req">*</span></label>
-            <select id="destino" name="Destino" required>
-              <option value="">Selecciona una opción</option>
-              <option>Cancún, México</option>
-              <option>París, Francia</option>
-              <option>Otro destino</option>
-            </select>
-            <span class="error"></span>
-          </div>
-          <div class="campo oculto" id="campo-otro">
-            <label for="otro-destino">¿Cuál destino?</label>
-            <input type="text" id="otro-destino" name="Otro destino">
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="salida">Fecha de salida aproximada <span class="req">*</span></label>
-            <input type="date" id="salida" name="Fecha de salida" required>
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="regreso">Fecha de regreso aproximada</label>
-            <input type="date" id="regreso" name="Fecha de regreso">
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="adultos">Adultos <span class="req">*</span></label>
-            <input type="number" id="adultos" name="Adultos" min="1" max="20" value="2" required>
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="menores">Menores de 12 años</label>
-            <input type="number" id="menores" name="Menores" min="0" max="20" value="0">
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="presupuesto">Presupuesto por persona (MXN) <span class="req">*</span></label>
-            <select id="presupuesto" name="Presupuesto por persona" required>
-              <option value="">Selecciona un rango</option>
-              <option>Menos de $15,000</option>
-              <option>$15,000 – $30,000</option>
-              <option>$30,000 – $50,000</option>
-              <option>Más de $50,000</option>
-            </select>
-            <span class="error"></span>
-          </div>
-          <div class="campo">
-            <label for="hospedaje">Tipo de hospedaje</label>
-            <select id="hospedaje" name="Hospedaje">
-              <option>Hotel todo incluido</option>
-              <option>Hotel con desayuno</option>
-              <option>Hotel boutique</option>
-              <option>Departamento / Airbnb</option>
-              <option>Sin preferencia</option>
-            </select>
-          </div>
-          <div class="campo completo">
-            <span class="etiqueta">¿Qué te gustaría hacer? <span class="ayuda">(elige las que quieras)</span></span>
-            <div class="opciones" data-grupo="Intereses">
-              <label><input type="checkbox" name="Intereses" value="Playa y descanso"> Playa y descanso</label>
-              <label><input type="checkbox" name="Intereses" value="Cultura e historia"> Cultura e historia</label>
-              <label><input type="checkbox" name="Intereses" value="Gastronomía"> Gastronomía</label>
-              <label><input type="checkbox" name="Intereses" value="Aventura"> Aventura</label>
-              <label><input type="checkbox" name="Intereses" value="Compras"> Compras</label>
-              <label><input type="checkbox" name="Intereses" value="Vida nocturna"> Vida nocturna</label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>3. Información adicional</legend>
-        <div class="campos">
-          <div class="campo completo">
-            <label for="necesidades">Necesidades especiales</label>
-            <textarea id="necesidades" name="Necesidades especiales" placeholder="Alergias, dieta, movilidad reducida, celebraciones (luna de miel, cumpleaños)…"></textarea>
-          </div>
-          <div class="campo">
-            <label for="contacto-pref">¿Cómo prefieres que te contactemos?</label>
-            <select id="contacto-pref" name="Contacto preferido">
-              <option>Correo electrónico</option>
-              <option>WhatsApp</option>
-              <option>Llamada telefónica</option>
-            </select>
-          </div>
-          <div class="campo">
-            <label for="como-supo">¿Cómo nos conociste?</label>
-            <select id="como-supo" name="Cómo nos conoció">
-              <option>Redes sociales</option>
-              <option>Recomendación</option>
-              <option>Buscador (Google)</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div class="campo completo">
-            <label class="opciones"><input type="checkbox" id="privacidad" name="Acepta aviso de privacidad" value="Sí" required> Acepto que Viajes Horizonte use mis datos únicamente para enviarme información sobre viajes. <span class="req">*</span></label>
-            <span class="error"></span>
-          </div>
-        </div>
-      </fieldset>
-
+      <p class="ayuda" style="text-align:center;margin:-8px 0 20px">Usaremos tus datos solo para conocer mejor a nuestros viajeros y enviarte información de viajes.</p>
       <div class="enviar">
-        <button type="submit" class="boton">Enviar cuestionario</button>
+        <button type="submit" class="boton" id="boton-enviar">Desbloquear precios y recursos</button>
       </div>
     </form>
 
-    <div class="confirmacion" id="confirmacion" role="status" aria-live="polite">
-      <h2>¡Gracias, <span id="nombre-confirmacion"></span>! ✈️</h2>
-      <p>Recibimos tu información. Estos son los datos que nos compartiste:</p>
-      <table class="resumen" id="resumen"></table>
-      <p>Puedes enviarnos tus respuestas por correo para que un asesor te contacte, o guardar una copia.</p>
-      <div class="acciones" style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="boton" id="enviar-correo" href="#">Enviar por correo</a>
-        <button type="button" class="boton contorno" id="descargar">Descargar mis respuestas</button>
-        <button type="button" class="boton contorno" id="editar">Editar respuestas</button>
+    <div class="confirmacion" id="ya-registrado">
+      <h2>¡Hola de nuevo, <span id="nombre-registrado"></span>! 👋</h2>
+      <p>Ya llenaste el formulario, así que tienes acceso a todo.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="boton" href="recursos.html">Ir a documentos y recursos</a>
+        <a class="boton contorno" href="index.html#itinerarios">Ver itinerarios</a>
+        <button type="button" class="boton contorno" id="cambiar">No soy yo</button>
       </div>
     </div>
   </section>
@@ -199,118 +70,66 @@
   <script>
     (function () {
       var form = document.getElementById('formulario');
-      var confirmacion = document.getElementById('confirmacion');
-      var destino = document.getElementById('destino');
-      var campoOtro = document.getElementById('campo-otro');
-      var salida = document.getElementById('salida');
-      var regreso = document.getElementById('regreso');
-      var texto = '';
+      var ya = document.getElementById('ya-registrado');
 
-      // La fecha de salida no puede ser en el pasado.
-      var hoy = new Date().toISOString().slice(0, 10);
-      salida.min = hoy;
-      regreso.min = hoy;
-      salida.addEventListener('change', function () { regreso.min = salida.value || hoy; });
-
-      // Destino desde la URL: cuestionario.html?destino=Cancún
-      var parametro = new URLSearchParams(location.search).get('destino');
-      if (parametro) {
-        Array.prototype.forEach.call(destino.options, function (o) {
-          if (o.value.toLowerCase().indexOf(parametro.toLowerCase()) === 0) destino.value = o.value;
-        });
+      // A dónde regresar después de llenar el formulario (solo rutas de este sitio).
+      var volver = new URLSearchParams(location.search).get('volver');
+      if (!volver || volver.charAt(0) !== '/' || volver.charAt(1) === '/' || volver.charAt(1) === '\\') {
+        volver = 'recursos.html';
       }
 
-      destino.addEventListener('change', function () {
-        campoOtro.classList.toggle('oculto', destino.value !== 'Otro destino');
+      var reg = Acceso.registro();
+      if (reg && !new URLSearchParams(location.search).get('volver')) {
+        form.style.display = 'none';
+        document.getElementById('nombre-registrado').textContent = reg.nombre;
+        ya.classList.add('visible');
+      } else if (reg) {
+        location.replace(volver);
+      }
+
+      document.getElementById('cambiar').addEventListener('click', function () {
+        ya.classList.remove('visible');
+        form.style.display = '';
       });
 
-      function mensajeDe(campo) {
-        var v = campo.validity;
-        if (v.valueMissing) return campo.type === 'checkbox' || campo.type === 'radio'
-          ? 'Selecciona una opción.' : 'Este campo es obligatorio.';
-        if (v.typeMismatch && campo.type === 'email') return 'Escribe un correo válido, por ejemplo nombre@correo.com.';
-        if (v.patternMismatch) return 'Escribe un teléfono válido (mínimo 8 dígitos).';
-        if (v.rangeUnderflow) return campo.type === 'date' ? 'La fecha no puede ser anterior.' : 'El valor es demasiado bajo.';
-        if (v.rangeOverflow) return 'El valor es demasiado alto.';
-        return '';
-      }
-
       function validar(campo) {
-        var contenedor = campo.closest('.campo');
-        if (!contenedor) return true;
-        var error = contenedor.querySelector('.error');
-        var mensaje = mensajeDe(campo);
-        if (campo === regreso && regreso.value && salida.value && regreso.value < salida.value) {
-          mensaje = 'El regreso debe ser después de la salida.';
-        }
-        if (error) error.textContent = mensaje;
-        campo.classList.toggle('invalido', !!mensaje && campo.type !== 'radio' && campo.type !== 'checkbox');
-        return !mensaje;
+        var v = campo.validity, m = '';
+        if (v.valueMissing) m = 'Este campo es obligatorio.';
+        else if (v.typeMismatch) m = 'Escribe un correo válido, por ejemplo nombre@correo.com.';
+        else if (v.tooShort || (campo.id === 'motivo' && campo.value.trim().length < 10)) m = 'Cuéntanos un poco más (mínimo 10 caracteres).';
+        else if (!campo.value.trim()) m = 'Este campo es obligatorio.';
+        campo.closest('.campo').querySelector('.error').textContent = m;
+        campo.classList.toggle('invalido', !!m);
+        return !m;
       }
 
-      form.querySelectorAll('input, select, textarea').forEach(function (c) {
-        c.addEventListener(c.type === 'radio' || c.type === 'checkbox' ? 'change' : 'blur', function () { validar(c); });
+      var campos = form.querySelectorAll('input, textarea');
+      campos.forEach(function (c) {
+        c.addEventListener('blur', function () { validar(c); });
+        // Mientras escribe, el error desaparece en cuanto el campo ya es válido.
+        c.addEventListener('input', function () { if (c.closest('.campo').querySelector('.error').textContent) validar(c); });
       });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var primeroInvalido = null;
-        var vistos = {};
-        form.querySelectorAll('input, select, textarea').forEach(function (c) {
-          if (c.type === 'radio') { if (vistos[c.name]) return; vistos[c.name] = true; }
-          if (!validar(c) && !primeroInvalido) primeroInvalido = c;
+        var primero = null;
+        campos.forEach(function (c) { if (!validar(c) && !primero) primero = c; });
+        if (primero) { primero.focus(); return; }
+
+        var datos = {
+          nombre: form.nombre.value.trim(),
+          correo: form.correo.value.trim(),
+          motivo: form.motivo.value.trim(),
+          fecha: new Date().toISOString()
+        };
+        var boton = document.getElementById('boton-enviar');
+        boton.disabled = true;
+        boton.textContent = 'Enviando…';
+
+        Acceso.enviar(datos).then(function () {
+          Acceso.guardar(datos);
+          location.href = volver;
         });
-        if (primeroInvalido) { primeroInvalido.focus(); return; }
-
-        // Reunir respuestas
-        var datos = new FormData(form);
-        var filas = [];
-        var agregados = {};
-        datos.forEach(function (valor, clave) {
-          if (!String(valor).trim()) return;
-          if (agregados[clave] !== undefined) { filas[agregados[clave]][1] += ', ' + valor; return; }
-          agregados[clave] = filas.length;
-          filas.push([clave, String(valor)]);
-        });
-
-        var tabla = document.getElementById('resumen');
-        tabla.innerHTML = '';
-        filas.forEach(function (f) {
-          var tr = tabla.insertRow();
-          var th = document.createElement('th'); th.textContent = f[0]; tr.appendChild(th);
-          var td = tr.insertCell(); td.textContent = f[1];
-        });
-        document.getElementById('nombre-confirmacion').textContent = datos.get('Nombre');
-
-        texto = 'CUESTIONARIO DE VIAJE – VIAJES HORIZONTE\n' +
-                'Fecha de envío: ' + new Date().toLocaleString('es-MX') + '\n\n' +
-                filas.map(function (f) { return f[0] + ': ' + f[1]; }).join('\n');
-
-        document.getElementById('enviar-correo').href =
-          'mailto:contacto@viajeshorizonte.com?subject=' +
-          encodeURIComponent('Solicitud de información – ' + datos.get('Destino')) +
-          '&body=' + encodeURIComponent(texto);
-
-        form.style.display = 'none';
-        confirmacion.classList.add('visible');
-        confirmacion.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-
-      document.getElementById('descargar').addEventListener('click', function () {
-        var blob = new Blob(['﻿' + texto], { type: 'text/plain;charset=utf-8' });
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = 'mi-cuestionario-de-viaje.txt';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
-      });
-
-      document.getElementById('editar').addEventListener('click', function () {
-        confirmacion.classList.remove('visible');
-        form.style.display = '';
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     })();
   </script>

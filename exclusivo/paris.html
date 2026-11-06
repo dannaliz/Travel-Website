@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex, nofollow">
   <title>París exclusivo</title>
   <link rel="stylesheet" href="../estilos.css">
+  <script src="../acceso.js"></script>
 </head>
 <body>
   <nav>
@@ -13,7 +14,7 @@
     <ul>
       <li><a href="../index.html">Inicio</a></li>
       <li><a href="../index.html#itinerarios">Itinerarios</a></li>
-      <li><a href="../cuestionario.html?destino=París">Cotizar</a></li>
+      <li><a href="../recursos.html">Recursos</a></li>
     </ul>
   </nav>
 
@@ -68,8 +69,8 @@
       <div class="codigo">
         Tu código de descuento por leer el itinerario:
         <strong>HORIZONTE-PAR15</strong>
-        15% de descuento en actividades opcionales. Menciónalo en el cuestionario o a tu asesor.
-        <p style="margin:16px 0 0"><a class="boton" href="../cuestionario.html?destino=París">Cotizar con descuento</a></p>
+        15% de descuento en actividades opcionales. Menciónalo al pedir tu cotización.
+        <p style="margin:16px 0 0"><a class="boton" href="mailto:contacto@viajeshorizonte.com?subject=Cotizaci%C3%B3n%20Par%C3%ADs%20%E2%80%93%20c%C3%B3digo%20HORIZONTE-PAR15">Cotizar con descuento</a></p>
       </div>
     </section>
 
@@ -94,7 +95,7 @@
   </footer>
 
   <script>
-    // Acceso solo desde el PDF: los enlaces del PDF incluyen ?desde=pdf&clave=...
+    // Acceso solo desde el PDF y con el formulario lleno: los enlaces del PDF incluyen ?desde=pdf&clave=...
     // (Esto oculta la sección a quien llega por otro lado; no es una protección real.)
     (function () {
       var CLAVE = 'par-2026';
@@ -104,6 +105,8 @@
         if (ok) sessionStorage.setItem('acceso-' + CLAVE, '1');
         else ok = sessionStorage.getItem('acceso-' + CLAVE) === '1';
       } catch (e) {}
+      // Además de venir del PDF, hay que haber llenado el formulario.
+      if (ok && !Acceso.registrado()) { location.replace(Acceso.urlCuestionario()); return; }
       document.getElementById(ok ? 'exclusivo' : 'bloqueado').classList.remove('oculto');
     })();
   </script>

@@ -6,6 +6,7 @@
   <title>Viajes Horizonte</title>
   <meta name="description" content="Itinerarios de viaje, guías descargables y asesoría personalizada de Viajes Horizonte.">
   <link rel="stylesheet" href="estilos.css">
+  <script src="acceso.js"></script>
 </head>
 <body>
   <nav>
@@ -14,8 +15,8 @@
       <li><a href="#inicio" class="activo">Inicio</a></li>
       <li><a href="#por-que-viajar">Por qué viajar</a></li>
       <li><a href="#itinerarios">Itinerarios</a></li>
-      <li><a href="#documentos">Documentos</a></li>
-      <li><a href="cuestionario.html">Cuestionario</a></li>
+      <li><a href="#documentos">Recursos</a></li>
+      <li><a href="cuestionario.html" data-si-registrado="recursos.html">Desbloquear 🔓</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
@@ -25,7 +26,7 @@
     <p>Consulta y descarga los itinerarios completos de nuestros viajes, guías prácticas y plantillas para planear tu aventura.</p>
     <div class="acciones">
       <a href="#itinerarios" class="boton">Ver itinerarios</a>
-      <a href="cuestionario.html" class="boton secundario">Quiero más información</a>
+      <a href="cuestionario.html" class="boton secundario" data-si-registrado="recursos.html">Ver precios y recursos</a>
     </div>
   </header>
 
@@ -89,8 +90,8 @@
       <li><strong>Reserva con anticipación:</strong> vuelos y hoteles suelen ser más baratos entre 2 y 4 meses antes.</li>
       <li><strong>Revisa tus documentos:</strong> confirma la vigencia de tu pasaporte (mínimo 6 meses) y los requisitos de entrada.</li>
       <li><strong>Contrata un seguro de viajero:</strong> una emergencia médica en el extranjero puede ser muy costosa.</li>
-      <li><strong>Haz un presupuesto:</strong> usa nuestra <a href="#documentos">plantilla de Excel</a> para no llevarte sorpresas.</li>
-      <li><strong>Viaja ligero:</strong> nuestra <a href="#documentos">lista de equipaje</a> te ayuda a llevar solo lo necesario.</li>
+      <li><strong>Haz un presupuesto:</strong> usa nuestra <a href="recursos.html">plantilla de Excel</a> para no llevarte sorpresas.</li>
+      <li><strong>Viaja ligero:</strong> nuestra <a href="recursos.html">lista de equipaje</a> te ayuda a llevar solo lo necesario.</li>
       <li><strong>Respeta la cultura local:</strong> aprende algunas palabras del idioma y las costumbres básicas del lugar.</li>
     </ul>
   </section>
@@ -99,7 +100,7 @@
   <div class="banda">
     <section id="itinerarios">
       <h2>Nuestros viajes</h2>
-      <p class="subtitulo">Abre el itinerario en PDF o descárgalo en Word para editarlo. Dentro de cada PDF encontrarás enlaces a secciones exclusivas con precios, promociones y datos curiosos.</p>
+      <p class="subtitulo">Abre el itinerario en PDF. Dentro encontrarás enlaces a los precios, promociones y datos curiosos, que se desbloquean llenando un formulario rápido.</p>
 
       <div class="viajes">
         <article class="tarjeta">
@@ -112,10 +113,9 @@
               <li>✈️ Vuelo + hotel todo incluido</li>
               <li>🌊 Isla Mujeres, Chichén Itzá y Tulum</li>
             </ul>
-            <p class="nota-pdf">🔒 Los precios y tu código de descuento están dentro del PDF.</p>
+            <p class="nota-pdf">🔒 Precios y código de descuento: dentro del PDF, después de llenar el formulario.</p>
             <div class="acciones">
               <a href="pdfs/itinerario-cancun.pdf" target="_blank" rel="noopener" class="boton">Ver itinerario (PDF)</a>
-              <a href="documentos/itinerario-cancun.docx" download class="boton contorno">Descargar en Word</a>
             </div>
           </div>
         </article>
@@ -130,10 +130,9 @@
               <li>✈️ Vuelo + hotel + tours</li>
               <li>🎨 Louvre, Versalles y crucero por el Sena</li>
             </ul>
-            <p class="nota-pdf">🔒 Los precios y tu código de descuento están dentro del PDF.</p>
+            <p class="nota-pdf">🔒 Precios y código de descuento: dentro del PDF, después de llenar el formulario.</p>
             <div class="acciones">
               <a href="pdfs/itinerario-paris.pdf" target="_blank" rel="noopener" class="boton">Ver itinerario (PDF)</a>
-              <a href="documentos/itinerario-paris.docx" download class="boton contorno">Descargar en Word</a>
             </div>
           </div>
         </article>
@@ -141,91 +140,30 @@
     </section>
   </div>
 
-  <!-- Documentos descargables -->
+  <!-- Recursos (bloqueados hasta llenar el formulario) -->
   <section id="documentos">
     <h2>Documentos y recursos</h2>
-    <p class="subtitulo">Guías y plantillas gratuitas para preparar tu viaje. Puedes abrirlas en el navegador o descargarlas.</p>
+    <p class="subtitulo" id="texto-recursos">Llena un formulario de 30 segundos para desbloquear los precios de cada viaje y descargar todos estos archivos.</p>
 
-    <div class="documentos">
-      <div class="documento">
-        <div class="tipo pdf">PDF</div>
-        <div class="info">
-          <h3>Itinerario – Cancún, México</h3>
-          <p>Plan día a día, qué incluye y recomendaciones. Contiene enlaces a precios exclusivos.</p>
-        </div>
-        <div class="acciones">
-          <a class="boton chico" href="pdfs/itinerario-cancun.pdf" target="_blank" rel="noopener">Abrir</a>
-          <a class="boton chico contorno" href="pdfs/itinerario-cancun.pdf" download>Descargar</a>
-        </div>
-      </div>
-
-      <div class="documento">
-        <div class="tipo pdf">PDF</div>
-        <div class="info">
-          <h3>Itinerario – París, Francia</h3>
-          <p>Plan día a día, qué incluye y recomendaciones. Contiene enlaces a precios exclusivos.</p>
-        </div>
-        <div class="acciones">
-          <a class="boton chico" href="pdfs/itinerario-paris.pdf" target="_blank" rel="noopener">Abrir</a>
-          <a class="boton chico contorno" href="pdfs/itinerario-paris.pdf" download>Descargar</a>
-        </div>
-      </div>
-
-      <div class="documento">
-        <div class="tipo docx">DOCX</div>
-        <div class="info">
-          <h3>Lista de equipaje</h3>
-          <p>Checklist en Word para playa y ciudad: ropa, documentos, salud y tecnología.</p>
-        </div>
-        <div class="acciones">
-          <a class="boton chico" data-abrir-office href="documentos/lista-de-equipaje.docx" target="_blank" rel="noopener">Abrir</a>
-          <a class="boton chico contorno" href="documentos/lista-de-equipaje.docx" download>Descargar</a>
-        </div>
-      </div>
-
-      <div class="documento">
-        <div class="tipo docx">DOCX</div>
-        <div class="info">
-          <h3>Requisitos y documentos de viaje</h3>
-          <p>Pasaporte, visas, seguro y trámites para viajar a México y a Europa.</p>
-        </div>
-        <div class="acciones">
-          <a class="boton chico" data-abrir-office href="documentos/requisitos-de-viaje.docx" target="_blank" rel="noopener">Abrir</a>
-          <a class="boton chico contorno" href="documentos/requisitos-de-viaje.docx" download>Descargar</a>
-        </div>
-      </div>
-
-      <div class="documento">
-        <div class="tipo xlsx">XLSX</div>
-        <div class="info">
-          <h3>Planificador de presupuesto</h3>
-          <p>Hoja de Excel con fórmulas: anota tus gastos y calcula el total por persona.</p>
-        </div>
-        <div class="acciones">
-          <a class="boton chico" data-abrir-office href="documentos/planificador-de-presupuesto.xlsx" target="_blank" rel="noopener">Abrir</a>
-          <a class="boton chico contorno" href="documentos/planificador-de-presupuesto.xlsx" download>Descargar</a>
-        </div>
-      </div>
-
-      <div class="documento">
-        <div class="tipo txt">TXT</div>
-        <div class="info">
-          <h3>Frases útiles en francés</h3>
-          <p>Saludos y frases básicas para moverte por París.</p>
-        </div>
-        <div class="acciones">
-          <a class="boton chico" href="documentos/frases-utiles-frances.txt" target="_blank" rel="noopener">Abrir</a>
-          <a class="boton chico contorno" href="documentos/frases-utiles-frances.txt" download>Descargar</a>
-        </div>
+    <div class="vista-previa" id="vista-previa">
+      <div class="documento"><div class="tipo pdf">PDF</div><div class="info"><h3>Itinerarios completos con precios</h3><p>Cancún y París, con enlaces a tarifas, actividades y códigos de descuento.</p></div></div>
+      <div class="documento"><div class="tipo docx">DOCX</div><div class="info"><h3>Itinerarios editables en Word</h3><p>Para agregar tus propias notas a cada día.</p></div></div>
+      <div class="documento"><div class="tipo docx">DOCX</div><div class="info"><h3>Lista de equipaje y requisitos de viaje</h3><p>Checklist y guía de pasaporte, visas y seguro.</p></div></div>
+      <div class="documento"><div class="tipo xlsx">XLSX</div><div class="info"><h3>Planificador de presupuesto</h3><p>Excel con fórmulas que calcula tu total por persona.</p></div></div>
+      <div class="documento"><div class="tipo txt">TXT</div><div class="info"><h3>Frases útiles en francés</h3><p>Para moverte por París sin problemas.</p></div></div>
+      <div class="candado">
+        <div class="icono">🔒</div>
+        <p><strong>Contenido bloqueado</strong><br>Solo te pedimos tu nombre, tu correo y por qué quieres viajar.</p>
+        <a href="cuestionario.html" class="boton" data-si-registrado="recursos.html" id="boton-recursos">Desbloquear ahora</a>
       </div>
     </div>
   </section>
 
   <section>
     <div class="cta">
-      <h2>¿Te interesa alguno de nuestros viajes?</h2>
-      <p>Llena nuestro cuestionario con tus datos y preferencias y te enviaremos una cotización personalizada.</p>
-      <a href="cuestionario.html" class="boton secundario">Llenar cuestionario</a>
+      <h2>¿Por qué quieres viajar tú?</h2>
+      <p>Cuéntanos en un par de líneas. A cambio te damos acceso a los precios y a todos nuestros documentos.</p>
+      <a href="cuestionario.html" class="boton secundario" data-si-registrado="recursos.html">Contarles y desbloquear</a>
     </div>
   </section>
 
@@ -234,17 +172,19 @@
   </footer>
 
   <script>
-    // Los archivos de Word y Excel no se pueden mostrar directamente en el navegador.
-    // Cuando la página está publicada (p. ej. GitHub Pages), "Abrir" usa el visor
-    // gratuito de Microsoft Office Online. En local, el archivo simplemente se descarga.
+    // Si la persona ya llenó el formulario, los botones llevan directo a los recursos.
     (function () {
-      var publico = /^https?:$/.test(location.protocol) &&
-                    !/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
-      if (!publico) return;
-      document.querySelectorAll('[data-abrir-office]').forEach(function (a) {
-        var absoluta = new URL(a.getAttribute('href'), location.href).href;
-        a.href = 'https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(absoluta);
+      var reg = Acceso.registro();
+      if (!reg) return;
+      document.querySelectorAll('[data-si-registrado]').forEach(function (a) {
+        a.href = a.getAttribute('data-si-registrado');
       });
+      document.getElementById('vista-previa').classList.add('desbloqueada');
+      document.querySelector('.candado .icono').textContent = '🔓';
+      document.querySelector('.candado p').innerHTML = '<strong>Contenido desbloqueado</strong><br>Gracias por contarnos por qué quieres viajar.';
+      document.getElementById('boton-recursos').textContent = 'Ir a documentos y recursos';
+      document.getElementById('texto-recursos').textContent =
+        '¡Hola, ' + reg.nombre.split(' ')[0] + '! Ya tienes acceso a todos los documentos y a los precios.';
     })();
   </script>
 </body>

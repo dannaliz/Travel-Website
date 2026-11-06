@@ -265,3 +265,18 @@ footer a { color: #fff; }
   .documento { flex-wrap: wrap; }
   .documento .acciones { width: 100%; justify-content: flex-start; }
 }
+
+/* Vista previa bloqueada de recursos (portada) */
+.vista-previa { position: relative; display: grid; gap: 14px; }
+.vista-previa .documento { filter: blur(2px); opacity: .55; user-select: none; }
+.vista-previa .candado {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(440px, calc(100% - 32px));
+  background: #fff; border-radius: 18px; padding: 28px 24px; text-align: center;
+  box-shadow: 0 12px 40px rgba(11,79,108,.22);
+}
+.vista-previa .candado .icono { font-size: 2.4rem; }
+.vista-previa .candado p { margin: 8px 0 18px; color: var(--gris); }
+.vista-previa .candado strong { color: var(--azul); font-size: 1.1rem; }
+.vista-previa.desbloqueada .documento { filter: none; opacity: 1; }
+.vista-previa.desbloqueada .candado .icono::after { content: ""; }
