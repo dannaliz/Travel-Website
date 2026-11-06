@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viajes Horizonte</title>
+  <style>
+    :root {
+      --azul: #0b4f6c;
+      --turquesa: #01baef;
+      --arena: #fbf5ec;
+      --coral: #f26b4f;
+      --texto: #22303c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--texto);
+      background: var(--arena);
+    }
+
+    /* Barra de navegación */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--azul); text-decoration: none; }
+    .logo span { color: var(--coral); }
+    nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
+    nav a { color: var(--texto); text-decoration: none; }
+    nav a:hover { color: var(--coral); }
+
+    /* Portada */
+    .hero {
+      padding: 96px 24px;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--azul), var(--turquesa));
+    }
+    .hero h1 { font-size: 2.6rem; margin: 0 0 12px; }
+    .hero p { font-size: 1.15rem; margin: 0 auto 28px; max-width: 560px; opacity: .95; }
+    .boton {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: var(--coral);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .boton:hover { filter: brightness(1.08); }
+
+    /* Itinerarios */
+    main { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
+    main h2 { text-align: center; font-size: 2rem; color: var(--azul); margin: 0 0 8px; }
+    .subtitulo { text-align: center; margin: 0 0 40px; color: #5a6b78; }
+    .viajes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .tarjeta {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s;
+    }
+    .tarjeta:hover { transform: translateY(-4px); }
+    .imagen {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .cancun { background: linear-gradient(135deg, #00c9a7, #4fd1ff); }
+    .paris  { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+    .machu  { background: linear-gradient(135deg, #56ab2f, #a8e063); }
+    .contenido { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+    .contenido h3 { margin: 0 0 4px; font-size: 1.3rem; }
+    .pais { margin: 0 0 12px; color: #5a6b78; font-size: .95rem; }
+    .detalles { list-style: none; padding: 0; margin: 0 0 20px; font-size: .95rem; }
+    .detalles li { margin: 4px 0; }
+    .contenido .boton { margin-top: auto; text-align: center; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: var(--azul);
+      color: #cfe6f0;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 600px) {
+      nav { flex-direction: column; gap: 12px; padding: 16px; }
+      .hero { padding: 64px 16px; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">Viajes <span>Horizonte</span></a>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#itinerarios">Itinerarios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Descubre tu próximo destino</h1>
+    <p>Consulta y descarga los itinerarios completos de nuestros viajes.</p>
+    <a href="#itinerarios" class="boton">Ver itinerarios</a>
+  </header>
+
+  <main id="itinerarios">
+    <h2>Nuestros viajes</h2>
+    <p class="subtitulo">Haz clic en un viaje para abrir su itinerario en PDF.</p>
+
+    <div class="viajes">
+      <article class="tarjeta">
+        <div class="imagen cancun">🏝️</div>
+        <div class="contenido">
+          <h3>Cancún</h3>
+          <p class="pais">México</p>
+          <ul class="detalles">
+            <li>📅 7 días / 6 noches</li>
+            <li>✈️ Vuelo + hotel todo incluido</li>
+          </ul>
+          <a href="pdfs/itinerario-cancun.pdf" target="_blank" class="boton">Ver itinerario (PDF)</a>
+        </div>
+      </article>
+
+      <article class="tarjeta">
+        <div class="imagen paris">🗼</div>
+        <div class="contenido">
+          <h3>París</h3>
+          <p class="pais">Francia</p>
+          <ul class="detalles">
+            <li>📅 10 días / 9 noches</li>
+            <li>✈️ Vuelo + hotel + tours</li>
+          </ul>
+          <a href="pdfs/itinerario-paris.pdf" target="_blank" class="boton">Ver itinerario (PDF)</a>
+        </div>
+      </article>
+
+      <article class="tarjeta">
+        <div class="imagen machu">⛰️</div>
+        <div class="contenido">
+          <h3>Machu Picchu</h3>
+          <p class="pais">Perú</p>
+          <ul class="detalles">
+            <li>📅 8 días / 7 noches</li>
+            <li>✈️ Vuelo + tren + guía</li>
+          </ul>
+          <a href="pdfs/itinerario-machu-picchu.pdf" target="_blank" class="boton">Ver itinerario (PDF)</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer id="contacto">
+    © 2026 Viajes Horizonte · contacto@viajeshorizonte.com
+  </footer>
+</body>
+</html>
