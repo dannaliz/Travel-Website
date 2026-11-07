@@ -4,110 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Cancún · Prices</title>
+  <title>Prices moved</title>
   <link rel="stylesheet" href="../estilos.css">
   <script src="../access.js"></script>
-  <!-- Prices require full access (all 4 steps) -->
-  <script>Access.require(4);</script>
+  <!-- This page holds no prices. Old PDF links land here and are sent on to the
+       Resources page, which requires all 4 steps. -->
+  <script>if (Access.require(4)) location.replace('../resources.html');</script>
 </head>
 <body>
-  <nav>
-    <a href="../index.html" class="logo">Horizonte <span>Travel</span></a>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../destinations.html" data-level="3">Destinations</a></li>
-      <li><a href="../resources.html" data-level="4">Resources</a></li>
-    </ul>
-  </nav>
-
-  <!-- Shown when someone arrives without the link from the PDF / resources page -->
-  <div class="bloqueado oculto" id="bloqueado">
-    <div class="icono">🔒</div>
-    <h2>Exclusive section</h2>
-    <p>This page opens from the links inside the Cancún PDF itinerary or from the Resources page.</p>
+  <div class="bloqueado">
+    <div class="icono">📄</div>
+    <h2>Prices are now in our documents</h2>
+    <p>Prices and discount codes are available as downloadable documents for registered travelers.</p>
     <a class="boton" href="../resources.html">Go to Resources</a>
   </div>
-
-  <div id="exclusivo" class="oculto">
-    <header class="hero chico cancun">
-      <span class="sello">🔓 Exclusive access</span>
-      <h1>Cancún: prices &amp; secrets</h1>
-      <p>2026–2027 rates, promotions and fun facts you won't find anywhere else on the site.</p>
-    </header>
-
-    <section id="precios">
-      <h2>Package prices</h2>
-      <p class="subtitulo">Price per person in Mexican pesos (MXN), departing from Mexico City. 7 days / 6 nights.</p>
-      <div class="tabla-scroll">
-        <table class="tabla-precios">
-          <thead>
-            <tr><th>Season</th><th>Dates</th><th>Double room</th><th>Single room</th><th>Child (2–11)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Low</td><td>May – June, September – November</td><td class="precio">$18,900</td><td class="precio">$26,500</td><td class="precio">$9,900</td></tr>
-            <tr><td>Mid</td><td>January – April (except Holy Week)</td><td class="precio">$22,400</td><td class="precio">$31,200</td><td class="precio">$11,500</td></tr>
-            <tr><td>High</td><td>July – August, Holy Week, December</td><td class="precio">$27,800</td><td class="precio">$38,900</td><td class="precio">$13,900</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="extras" style="padding-top:0">
-      <h2>Optional activities</h2>
-      <p class="subtitulo">Price per person. Book them with your advisor.</p>
-      <div class="tabla-scroll">
-        <table class="tabla-precios">
-          <thead><tr><th>Activity</th><th>Duration</th><th>Price</th></tr></thead>
-          <tbody>
-            <tr><td>Swim with whale sharks (June – September)</td><td>Full day</td><td class="precio">$3,200</td></tr>
-            <tr><td>Xcaret Plus with transportation</td><td>Full day</td><td class="precio">$3,650</td></tr>
-            <tr><td>Snorkeling at the Underwater Museum (MUSA)</td><td>3 hours</td><td class="precio">$1,350</td></tr>
-            <tr><td>Romantic dinner on the beach</td><td>2 hours</td><td class="precio">$2,400</td></tr>
-            <tr><td>Cenote route by ATV</td><td>5 hours</td><td class="precio">$1,890</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="codigo">
-        Your discount code:
-        <strong>HORIZONTE-CUN10</strong>
-        10% off the package. Mention it when you request your quote.
-        <p style="margin:16px 0 0"><a class="boton" href="mailto:contacto@viajeshorizonte.com?subject=Canc%C3%BAn%20quote%20%E2%80%93%20code%20HORIZONTE-CUN10">Get a discounted quote</a></p>
-      </div>
-    </section>
-
-    <div class="banda">
-      <section id="curiosidades">
-        <h2>Fun facts about Cancún</h2>
-        <p class="subtitulo">Things to share on your trip.</p>
-        <div class="curiosidades">
-          <div class="curiosidad"><h3>🏗️ A young city</h3><p>Cancún was officially founded in 1970 as a planned tourism project; before that it was an island with only a few dozen residents.</p></div>
-          <div class="curiosidad"><h3>🐍 The descent of Kukulkán</h3><p>On the spring and autumn equinoxes, sunlight forms the shadow of a serpent sliding down the pyramid at Chichén Itzá.</p></div>
-          <div class="curiosidad"><h3>🌊 A museum under the sea</h3><p>MUSA has more than 500 submerged sculptures that work as an artificial reef for corals and fish.</p></div>
-          <div class="curiosidad"><h3>💧 Underground rivers</h3><p>The Yucatán Peninsula has no surface rivers: water flows underground and emerges in thousands of cenotes.</p></div>
-          <div class="curiosidad"><h3>🐢 Turtle beaches</h3><p>From May to October, sea turtles nest on the beaches; hotels dim their lights so hatchlings don't get disoriented.</p></div>
-          <div class="curiosidad"><h3>⏰ Its own time zone</h3><p>Quintana Roo uses UTC−5 all year, one hour ahead of Mexico City.</p></div>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <footer>
-    © 2026 Horizonte Travel · Prices subject to availability and change without notice.
-  </footer>
-
-  <script>
-    // Opens only with the key included in the PDF / Resources links (?desde=pdf&clave=...).
-    (function () {
-      var KEY = 'cun-2026';
-      var p = new URLSearchParams(location.search);
-      var ok = p.get('desde') === 'pdf' && p.get('clave') === KEY;
-      try {
-        if (ok) sessionStorage.setItem('acceso-' + KEY, '1');
-        else ok = sessionStorage.getItem('acceso-' + KEY) === '1';
-      } catch (e) {}
-      document.getElementById(ok ? 'exclusivo' : 'bloqueado').classList.remove('oculto');
-    })();
-  </script>
 </body>
 </html>

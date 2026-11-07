@@ -4,110 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Paris · Prices</title>
+  <title>Prices moved</title>
   <link rel="stylesheet" href="../estilos.css">
   <script src="../access.js"></script>
-  <!-- Prices require full access (all 4 steps) -->
-  <script>Access.require(4);</script>
+  <!-- This page holds no prices. Old PDF links land here and are sent on to the
+       Resources page, which requires all 4 steps. -->
+  <script>if (Access.require(4)) location.replace('../resources.html');</script>
 </head>
 <body>
-  <nav>
-    <a href="../index.html" class="logo">Horizonte <span>Travel</span></a>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../destinations.html" data-level="3">Destinations</a></li>
-      <li><a href="../resources.html" data-level="4">Resources</a></li>
-    </ul>
-  </nav>
-
-  <!-- Shown when someone arrives without the link from the PDF / resources page -->
-  <div class="bloqueado oculto" id="bloqueado">
-    <div class="icono">🔒</div>
-    <h2>Exclusive section</h2>
-    <p>This page opens from the links inside the Paris PDF itinerary or from the Resources page.</p>
+  <div class="bloqueado">
+    <div class="icono">📄</div>
+    <h2>Prices are now in our documents</h2>
+    <p>Prices and discount codes are available as downloadable documents for registered travelers.</p>
     <a class="boton" href="../resources.html">Go to Resources</a>
   </div>
-
-  <div id="exclusivo" class="oculto">
-    <header class="hero chico paris">
-      <span class="sello">🔓 Exclusive access</span>
-      <h1>Paris: prices &amp; secrets</h1>
-      <p>2026–2027 rates, promotions and fun facts you won't find anywhere else on the site.</p>
-    </header>
-
-    <section id="precios">
-      <h2>Package prices</h2>
-      <p class="subtitulo">Price per person in Mexican pesos (MXN), departing from Mexico City. 10 days / 9 nights.</p>
-      <div class="tabla-scroll">
-        <table class="tabla-precios">
-          <thead>
-            <tr><th>Season</th><th>Dates</th><th>Double room</th><th>Single room</th><th>Child (2–11)</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Low</td><td>November – March (except holidays)</td><td class="precio">$46,500</td><td class="precio">$61,900</td><td class="precio">$31,800</td></tr>
-            <tr><td>Mid</td><td>April – May, September – October</td><td class="precio">$52,900</td><td class="precio">$70,400</td><td class="precio">$35,600</td></tr>
-            <tr><td>High</td><td>June – August, December</td><td class="precio">$61,300</td><td class="precio">$82,700</td><td class="precio">$41,200</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="extras" style="padding-top:0">
-      <h2>Optional activities</h2>
-      <p class="subtitulo">Price per person. Book them with your advisor.</p>
-      <div class="tabla-scroll">
-        <table class="tabla-precios">
-          <thead><tr><th>Activity</th><th>Duration</th><th>Price</th></tr></thead>
-          <tbody>
-            <tr><td>Disneyland Paris (1 day, 2 parks)</td><td>Full day</td><td class="precio">$3,900</td></tr>
-            <tr><td>Loire Valley castles</td><td>Full day</td><td class="precio">$4,600</td></tr>
-            <tr><td>Moulin Rouge show with champagne</td><td>2 hours</td><td class="precio">$3,300</td></tr>
-            <tr><td>French cooking class (croissants &amp; macarons)</td><td>3 hours</td><td class="precio">$2,450</td></tr>
-            <tr><td>Dinner cruise on the Seine</td><td>2.5 hours</td><td class="precio">$2,900</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="codigo">
-        Your discount code:
-        <strong>HORIZONTE-PAR15</strong>
-        15% off optional activities. Mention it when you request your quote.
-        <p style="margin:16px 0 0"><a class="boton" href="mailto:contacto@viajeshorizonte.com?subject=Paris%20quote%20%E2%80%93%20code%20HORIZONTE-PAR15">Get a discounted quote</a></p>
-      </div>
-    </section>
-
-    <div class="banda">
-      <section id="curiosidades">
-        <h2>Fun facts about Paris</h2>
-        <p class="subtitulo">Things to share on your trip.</p>
-        <div class="curiosidades">
-          <div class="curiosidad"><h3>🗼 A temporary tower</h3><p>The Eiffel Tower was built for the 1889 World's Fair and was meant to be dismantled after 20 years; it was saved by its usefulness as a radio antenna.</p></div>
-          <div class="curiosidad"><h3>📏 It grows in summer</h3><p>In the heat, the iron expands and the tower can "grow" about 15 centimeters.</p></div>
-          <div class="curiosidad"><h3>🖼️ Impossible to see it all</h3><p>The Louvre displays around 35,000 works; looking at each for 30 seconds would take you more than 12 days non-stop.</p></div>
-          <div class="curiosidad"><h3>💀 A city underground</h3><p>The Catacombs hold the remains of about six million people in old limestone quarries.</p></div>
-          <div class="curiosidad"><h3>🗽 Lady Liberty's "sister"</h3><p>On the Île aux Cygnes, in the Seine, stands a smaller replica of the statue France gave the United States.</p></div>
-          <div class="curiosidad"><h3>🥖 The baguette is heritage</h3><p>In 2022 UNESCO added the craft of baguette-making to its list of Intangible Cultural Heritage.</p></div>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <footer>
-    © 2026 Horizonte Travel · Prices subject to availability and exchange rates.
-  </footer>
-
-  <script>
-    // Opens only with the key included in the PDF / Resources links (?desde=pdf&clave=...).
-    (function () {
-      var KEY = 'par-2026';
-      var p = new URLSearchParams(location.search);
-      var ok = p.get('desde') === 'pdf' && p.get('clave') === KEY;
-      try {
-        if (ok) sessionStorage.setItem('acceso-' + KEY, '1');
-        else ok = sessionStorage.getItem('acceso-' + KEY) === '1';
-      } catch (e) {}
-      document.getElementById(ok ? 'exclusivo' : 'bloqueado').classList.remove('oculto');
-    })();
-  </script>
 </body>
 </html>
