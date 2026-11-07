@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Step 4 · Traveler application</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="access.js"></script>
+  <script src="captcha.js"></script>
+  <script>Access.require(3);</script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">Horizonte <span>Travel</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#how-it-works">How it works</a></li>
+      <li><a href="destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="resources.html" data-level="4">Resources</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero chico">
+    <span class="sello">Step 4 of 4</span>
+    <h1>Traveler application</h1>
+    <p>The last step. Tell us why you want to travel and get full access to prices, discount codes and every document.</p>
+  </header>
+
+  <section>
+    <ol class="stepper">
+      <li class="hecho"><span>✓</span>Account</li>
+      <li class="hecho"><span>✓</span>Verify email</li>
+      <li class="hecho"><span>✓</span>Travel profile</li>
+      <li class="actual"><span>4</span>Application</li>
+    </ol>
+
+    <p class="aviso oculto" id="aviso-bloqueo"></p>
+
+    <form class="cuestionario" id="formulario" novalidate>
+      <fieldset>
+        <legend>About your trip</legend>
+        <div class="campos">
+          <div class="campo completo">
+            <label for="motivo">Why do you want to travel? <span class="req">*</span></label>
+            <textarea id="motivo" name="motivo" minlength="30" required
+              placeholder="e.g. I want to get to know other cultures, celebrate my anniversary, take a break from routine…"></textarea>
+            <span class="ayuda"><span id="contador">0</span>/30 characters minimum</span>
+            <span class="error"></span>
+          </div>
+          <div class="campo">
+            <label for="ocasion">Is it a special occasion?</label>
+            <select id="ocasion" name="ocasion">
+              <option value="">No, just traveling</option>
+              <option>Honeymoon / anniversary</option>
+              <option>Birthday</option>
+              <option>Graduation</option>
+              <option>Family reunion</option>
+            </select>
+            <span class="error"></span>
+          </div>
+          <div class="campo">
+            <label for="fuente">How did you hear about us? <span class="req">*</span></label>
+            <select id="fuente" name="fuente" required>
+              <option value="">Choose…</option>
+              <option>Social media</option>
+              <option>Google search</option>
+              <option>A friend or family member</option>
+              <option>I've traveled with you before</option>
+              <option>Other</option>
+            </select>
+            <span class="error"></span>
+          </div>
+          <div class="campo completo">
+            <span class="etiqueta">Would you like an advisor to contact you? <span class="req">*</span></span>
+            <div class="opciones">
+              <label><input type="radio" name="contacto" value="Yes, by email" required> Yes, by email</label>
+              <label><input type="radio" name="contacto" value="Not yet"> Not yet, I'm just exploring</label>
+            </div>
+            <span class="error"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Final security check</legend>
+        <!-- CAPTCHA: the widget is built by captcha.js (Captcha.mount) -->
+        <div class="campo captcha" id="captcha"></div>
+        <div class="campo" style="margin-top:18px">
+          <label class="check"><input type="checkbox" id="confirmo" name="confirmo" required> I confirm the information in my application is accurate. <span class="req">*</span></label>
+          <span class="error"></span>
+        </div>
+      </fieldset>
+
+      <div class="enviar">
+        <button type="submit" class="boton" id="boton-enviar">Submit application</button>
+      </div>
+    </form>
+
+    <!-- Review screen (delay before full access) -->
+    <div class="confirmacion revision" id="revision">
+      <h2>Your application is being reviewed</h2>
+      <p>Please keep this page open. Full access unlocks in <strong id="cuenta">15</strong> seconds.</p>
+      <div class="barra"><span id="barra-revision"></span></div>
+      <ul class="estado-revision">
+        <li data-t="0">Application received</li>
+        <li data-t="4">Checking your profile</li>
+        <li data-t="9">Preparing your prices and documents</li>
+        <li data-t="14">Access approved</li>
+      </ul>
+      <a class="boton oculto" id="ir-recursos" href="resources.html">Go to prices &amp; resources</a>
+    </div>
+
+    <div class="confirmacion" id="ya-hecho">
+      <h2>✓ You have full access</h2>
+      <p>All four steps are complete.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="boton" href="resources.html">Prices &amp; resources</a>
+        <a class="boton contorno" href="destinations.html">Destinations</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Horizonte Travel · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a> · <a href="#" id="reiniciar">Reset my progress</a>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('formulario');
+      if (Access.level() >= 4) {
+        form.style.display = 'none';
+        document.getElementById('ya-hecho').classList.add('visible');
+        return;
+      }
+
+      // CAPTCHA (see captcha.js)
+      var captcha = Captcha.mount(document.getElementById('captcha'));
+
+      var motivo = document.getElementById('motivo');
+      motivo.addEventListener('input', function () {
+        document.getElementById('contador').textContent = motivo.value.trim().length;
+      });
+
+      var validateAll = Access.validator(form, function (f) {
+        if (f.id === 'motivo' && f.value.trim().length < 30) return 'Tell us a bit more (at least 30 characters).';
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validateAll()) return;
+        if (!captcha.check()) return;   // CAPTCHA must match before submitting
+
+        var application = {
+          reason: motivo.value.trim(),
+          occasion: form.ocasion.value,
+          source: form.fuente.value,
+          contact: form.contacto.value,
+          submitted: new Date().toISOString()
+        };
+        document.getElementById('boton-enviar').disabled = true;
+
+        Access.processing([
+          'Checking your security answer…',
+          'Sending your application…',
+          'Application received!'
+        ], 3500).then(function () {
+          return Access.send('Step 4: traveler application', {
+            account: Access.data().account, profile: Access.data().profile, application: application
+          });
+        }).then(function () {
+          form.style.display = 'none';
+          review(application);
+        });
+      });
+
+      // Delay: 15-second "review" before granting full access.
+      function review(application) {
+        var box = document.getElementById('revision');
+        box.classList.add('visible');
+        window.scrollTo({ top: box.offsetTop - 80, behavior: 'smooth' });
+        var TOTAL = 15, t = 0;
+        var items = box.querySelectorAll('.estado-revision li');
+        function tick() {
+          document.getElementById('cuenta').textContent = TOTAL - t;
+          document.getElementById('barra-revision').style.width = (t / TOTAL * 100) + '%';
+          items.forEach(function (li) { if (t >= +li.getAttribute('data-t')) li.classList.add('hecho'); });
+          if (t >= TOTAL) {
+            clearInterval(timer);
+            Access.save({ level: 4, application: application });
+            box.querySelector('h2').textContent = '🎉 Approved! You now have full access';
+            box.querySelector('p').textContent = 'Prices, discount codes and all documents are unlocked.';
+            document.getElementById('ir-recursos').classList.remove('oculto');
+            return;
+          }
+          t++;
+        }
+        tick();
+        var timer = setInterval(tick, 1000);
+      }
+    })();
+  </script>
+</body>
+</html>

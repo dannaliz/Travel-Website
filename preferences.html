@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Step 3 · Travel profile</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="access.js"></script>
+  <script>Access.require(2);</script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">Horizonte <span>Travel</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#how-it-works">How it works</a></li>
+      <li><a href="destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="resources.html" data-level="4">Resources</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero chico">
+    <span class="sello">Step 3 of 4</span>
+    <h1>Build your travel profile</h1>
+    <p>Three short parts. When you finish, our destinations and itineraries unlock.</p>
+  </header>
+
+  <section>
+    <ol class="stepper">
+      <li class="hecho"><span>✓</span>Account</li>
+      <li class="hecho"><span>✓</span>Verify email</li>
+      <li class="actual"><span>3</span>Travel profile</li>
+      <li><span>4</span>Application</li>
+    </ol>
+
+    <p class="aviso oculto" id="aviso-bloqueo"></p>
+
+    <form class="cuestionario" id="formulario" novalidate>
+      <div class="subpasos">
+        <span class="activo" data-parte="1">A · Travel style</span>
+        <span data-parte="2">B · Budget</span>
+        <span data-parte="3">C · Dates &amp; destination</span>
+      </div>
+
+      <!-- Part A -->
+      <fieldset class="parte" data-parte="1">
+        <legend>Part A · Your travel style</legend>
+        <div class="campos">
+          <div class="campo completo">
+            <span class="etiqueta">What kind of trips do you enjoy? <span class="req">*</span></span>
+            <div class="opciones">
+              <label><input type="checkbox" name="estilo" value="Beach" required> 🏖️ Beach</label>
+              <label><input type="checkbox" name="estilo" value="Culture & history"> 🏛️ Culture &amp; history</label>
+              <label><input type="checkbox" name="estilo" value="Adventure"> 🧗 Adventure</label>
+              <label><input type="checkbox" name="estilo" value="Food"> 🍷 Food &amp; wine</label>
+              <label><input type="checkbox" name="estilo" value="Relaxation"> 🧘 Relaxation</label>
+            </div>
+            <span class="error"></span>
+          </div>
+          <div class="campo completo">
+            <span class="etiqueta">Who do you usually travel with? <span class="req">*</span></span>
+            <div class="opciones">
+              <label><input type="radio" name="compania" value="Solo" required> Solo</label>
+              <label><input type="radio" name="compania" value="Partner"> Partner</label>
+              <label><input type="radio" name="compania" value="Family"> Family</label>
+              <label><input type="radio" name="compania" value="Friends"> Friends</label>
+            </div>
+            <span class="error"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Part B -->
+      <fieldset class="parte oculto" data-parte="2">
+        <legend>Part B · Budget</legend>
+        <div class="campos">
+          <div class="campo">
+            <label for="presupuesto">Budget per person (MXN) <span class="req">*</span></label>
+            <select id="presupuesto" name="presupuesto" required>
+              <option value="">Choose…</option>
+              <option>Under $20,000</option>
+              <option>$20,000 – $40,000</option>
+              <option>$40,000 – $70,000</option>
+              <option>More than $70,000</option>
+            </select>
+            <span class="error"></span>
+          </div>
+          <div class="campo">
+            <label for="viajeros">Number of travelers <span class="req">*</span></label>
+            <input type="number" id="viajeros" name="viajeros" min="1" max="20" value="2" required>
+            <span class="error"></span>
+          </div>
+          <div class="campo completo">
+            <span class="etiqueta">Preferred accommodation <span class="req">*</span></span>
+            <div class="opciones">
+              <label><input type="radio" name="hospedaje" value="All-inclusive resort" required> All-inclusive resort</label>
+              <label><input type="radio" name="hospedaje" value="Boutique hotel"> Boutique hotel</label>
+              <label><input type="radio" name="hospedaje" value="Budget hotel"> Budget hotel</label>
+            </div>
+            <span class="error"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Part C -->
+      <fieldset class="parte oculto" data-parte="3">
+        <legend>Part C · Dates &amp; destination</legend>
+        <div class="campos">
+          <div class="campo">
+            <label for="mes">When would you like to travel? <span class="req">*</span></label>
+            <select id="mes" name="mes" required>
+              <option value="">Choose…</option>
+              <option>In the next 3 months</option>
+              <option>In 3 to 6 months</option>
+              <option>In 6 to 12 months</option>
+              <option>Just exploring</option>
+            </select>
+            <span class="error"></span>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">Trip length <span class="req">*</span></span>
+            <div class="opciones">
+              <label><input type="radio" name="duracion" value="Up to 7 days" required> Up to 7 days</label>
+              <label><input type="radio" name="duracion" value="8 to 14 days"> 8–14 days</label>
+            </div>
+            <span class="error"></span>
+          </div>
+          <div class="campo completo">
+            <span class="etiqueta">Which destination interests you most? <span class="req">*</span></span>
+            <div class="opciones">
+              <label><input type="radio" name="destino" value="Cancun" required> 🏝️ Cancún, Mexico</label>
+              <label><input type="radio" name="destino" value="Paris"> 🗼 Paris, France</label>
+              <label><input type="radio" name="destino" value="Both"> Both</label>
+            </div>
+            <span class="error"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="enviar navegacion">
+        <button type="button" class="boton contorno oculto" id="atras">← Back</button>
+        <button type="submit" class="boton" id="siguiente">Next →</button>
+      </div>
+    </form>
+
+    <div class="confirmacion" id="ya-hecho">
+      <h2>✓ Your travel profile is complete</h2>
+      <p>Destinations and itineraries are unlocked.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="boton" href="destinations.html">See destinations</a>
+        <a class="boton contorno" id="seguir" href="application.html">Continue with Step 4</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Horizonte Travel · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a> · <a href="#" id="reiniciar">Reset my progress</a>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('formulario');
+      if (Access.level() >= 3) {
+        form.style.display = 'none';
+        if (Access.level() >= 4) document.getElementById('seguir').classList.add('oculto');
+        document.getElementById('ya-hecho').classList.add('visible');
+        return;
+      }
+
+      var part = 1, TOTAL = 3;
+      var back = document.getElementById('atras');
+      var next = document.getElementById('siguiente');
+      var validateAll = Access.validator(form);
+
+      function show(n) {
+        part = n;
+        form.querySelectorAll('fieldset.parte').forEach(function (f) {
+          f.classList.toggle('oculto', +f.getAttribute('data-parte') !== n);
+        });
+        form.querySelectorAll('.subpasos span').forEach(function (s) {
+          var p = +s.getAttribute('data-parte');
+          s.classList.toggle('activo', p === n);
+          s.classList.toggle('hecho', p < n);
+        });
+        back.classList.toggle('oculto', n === 1);
+        next.textContent = n === TOTAL ? 'Finish profile' : 'Next →';
+        window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
+      }
+
+      back.addEventListener('click', function () { show(part - 1); });
+
+      function values(name) {
+        return Array.prototype.map.call(form.querySelectorAll('[name="' + name + '"]:checked'), function (x) { return x.value; });
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var current = form.querySelector('fieldset.parte[data-parte="' + part + '"]');
+        if (!validateAll(current)) return;
+
+        if (part < TOTAL) {
+          // Short delay between parts.
+          Access.processing(['Saving part ' + 'ABC'[part - 1] + '…'], 1500).then(function () { show(part + 1); });
+          return;
+        }
+
+        var profile = {
+          styles: values('estilo'),
+          companions: form.compania.value,
+          budget: form.presupuesto.value,
+          travelers: form.viajeros.value,
+          accommodation: form.hospedaje.value,
+          when: form.mes.value,
+          length: form.duracion.value,
+          destination: form.destino.value
+        };
+        next.disabled = true;
+        // Longer delay: "analyzing" the profile.
+        Access.processing([
+          'Saving your travel profile…',
+          'Analyzing your preferences…',
+          'Matching you with destinations…',
+          'Unlocking itineraries…'
+        ], 5000).then(function () {
+          return Access.send('Step 3: travel profile', { email: Access.data().account.email, profile: profile });
+        }).then(function () {
+          Access.save({ level: 3, profile: profile });
+          location.href = 'destinations.html?new=1';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

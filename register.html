@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Step 1 · Create your account</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="access.js"></script>
+  <script src="captcha.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">Horizonte <span>Travel</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#how-it-works">How it works</a></li>
+      <li><a href="destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="resources.html" data-level="4">Resources</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero chico">
+    <span class="sello">Step 1 of 4</span>
+    <h1>Create your account</h1>
+    <p>Start here to unlock our itineraries, prices and travel resources.</p>
+  </header>
+
+  <section>
+    <ol class="stepper">
+      <li class="actual"><span>1</span>Account</li>
+      <li><span>2</span>Verify email</li>
+      <li><span>3</span>Travel profile</li>
+      <li><span>4</span>Application</li>
+    </ol>
+
+    <p class="aviso oculto" id="aviso-bloqueo"></p>
+
+    <form class="cuestionario" id="formulario" novalidate>
+      <fieldset>
+        <legend>Your details</legend>
+        <div class="campos">
+          <div class="campo">
+            <label for="nombre">Full name <span class="req">*</span></label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" minlength="3" required>
+            <span class="error"></span>
+          </div>
+          <div class="campo">
+            <label for="pais">Country of residence <span class="req">*</span></label>
+            <select id="pais" name="pais" required>
+              <option value="">Choose…</option>
+              <option>Mexico</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>Spain</option>
+              <option>Colombia</option>
+              <option>Argentina</option>
+              <option>Other</option>
+            </select>
+            <span class="error"></span>
+          </div>
+          <div class="campo">
+            <label for="correo">Email <span class="req">*</span></label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
+            <span class="error"></span>
+          </div>
+          <div class="campo">
+            <label for="correo2">Confirm email <span class="req">*</span></label>
+            <input type="email" id="correo2" name="correo2" autocomplete="off" required>
+            <span class="error"></span>
+          </div>
+          <div class="campo completo">
+            <span class="etiqueta">Age range <span class="req">*</span></span>
+            <div class="opciones">
+              <label><input type="radio" name="edad" value="18-25" required> 18–25</label>
+              <label><input type="radio" name="edad" value="26-35"> 26–35</label>
+              <label><input type="radio" name="edad" value="36-50"> 36–50</label>
+              <label><input type="radio" name="edad" value="51+"> 51+</label>
+            </div>
+            <span class="error"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Security check</legend>
+        <!-- CAPTCHA: the widget is built by captcha.js (Captcha.mount) -->
+        <div class="campo captcha" id="captcha"></div>
+
+        <div class="campo" style="margin-top:18px">
+          <label class="check"><input type="checkbox" id="terminos" name="terminos" required> I agree to receive travel information from Horizonte Travel. <span class="req">*</span></label>
+          <span class="error"></span>
+        </div>
+      </fieldset>
+
+      <div class="enviar">
+        <button type="submit" class="boton" id="boton-enviar">Create account &amp; continue</button>
+      </div>
+    </form>
+
+    <div class="confirmacion" id="ya-hecho">
+      <h2>✓ Step 1 is complete</h2>
+      <p>Your account (<strong id="correo-hecho"></strong>) already exists on this browser.</p>
+      <a class="boton" id="seguir" href="verify.html">Continue</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Horizonte Travel · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a> · <a href="#" id="reiniciar">Reset my progress</a>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('formulario');
+
+      // Already registered: offer to continue instead of repeating the form.
+      if (Access.level() >= 1) {
+        form.style.display = 'none';
+        document.getElementById('correo-hecho').textContent = Access.data().account.email;
+        document.getElementById('seguir').href = Access.nextStepPage();
+        document.getElementById('ya-hecho').classList.add('visible');
+        return;
+      }
+
+      // CAPTCHA (see captcha.js)
+      var captcha = Captcha.mount(document.getElementById('captcha'));
+
+      var validateAll = Access.validator(form, function (f) {
+        if (f.id === 'correo2' && f.value.trim().toLowerCase() !== form.correo.value.trim().toLowerCase())
+          return 'The emails don\'t match.';
+        if (f.id === 'terminos' && !f.checked) return 'You need to accept to continue.';
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validateAll()) return;
+        if (!captcha.check()) return;   // CAPTCHA must match before continuing
+
+        var account = {
+          name: form.nombre.value.trim(),
+          email: form.correo.value.trim(),
+          country: form.pais.value,
+          age: form.edad.value,
+          created: new Date().toISOString()
+        };
+        document.getElementById('boton-enviar').disabled = true;
+
+        // Delay: simulated account creation.
+        Access.processing([
+          'Checking your security answer…',
+          'Creating your traveler account…',
+          'Securing your profile…',
+          'Preparing email verification…'
+        ], 4500).then(function () {
+          return Access.send('Step 1: new account', account);
+        }).then(function () {
+          Access.save({ level: 1, account: account });
+          location.href = 'verify.html';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

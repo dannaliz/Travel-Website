@@ -1,112 +1,111 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Cancún exclusivo</title>
+  <title>Cancún · Prices</title>
   <link rel="stylesheet" href="../estilos.css">
-  <script src="../acceso.js"></script>
+  <script src="../access.js"></script>
+  <!-- Prices require full access (all 4 steps) -->
+  <script>Access.require(4);</script>
 </head>
 <body>
   <nav>
-    <a href="../index.html" class="logo">Viajes <span>Horizonte</span></a>
+    <a href="../index.html" class="logo">Horizonte <span>Travel</span></a>
     <ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="../index.html#itinerarios">Itinerarios</a></li>
-      <li><a href="../recursos.html">Recursos</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="../resources.html" data-level="4">Resources</a></li>
     </ul>
   </nav>
 
-  <!-- Se muestra si alguien entra sin venir del PDF -->
+  <!-- Shown when someone arrives without the link from the PDF / resources page -->
   <div class="bloqueado oculto" id="bloqueado">
     <div class="icono">🔒</div>
-    <h2>Sección exclusiva</h2>
-    <p>Esta página solo está disponible desde el itinerario en PDF de Cancún. Abre el PDF y usa los enlaces que aparecen dentro.</p>
-    <a class="boton" href="../pdfs/itinerario-cancun.pdf" target="_blank" rel="noopener">Abrir itinerario de Cancún</a>
+    <h2>Exclusive section</h2>
+    <p>This page opens from the links inside the Cancún PDF itinerary or from the Resources page.</p>
+    <a class="boton" href="../resources.html">Go to Resources</a>
   </div>
 
   <div id="exclusivo" class="oculto">
     <header class="hero chico cancun">
-      <span class="sello">🔓 Acceso exclusivo desde tu itinerario PDF</span>
-      <h1>Cancún: precios y secretos</h1>
-      <p>Tarifas vigentes 2026–2027, promociones y datos curiosos que no encontrarás en el resto del sitio.</p>
+      <span class="sello">🔓 Exclusive access</span>
+      <h1>Cancún: prices &amp; secrets</h1>
+      <p>2026–2027 rates, promotions and fun facts you won't find anywhere else on the site.</p>
     </header>
 
     <section id="precios">
-      <h2>Precios del paquete</h2>
-      <p class="subtitulo">Precio por persona en pesos mexicanos (MXN), saliendo de la Ciudad de México. 7 días / 6 noches.</p>
+      <h2>Package prices</h2>
+      <p class="subtitulo">Price per person in Mexican pesos (MXN), departing from Mexico City. 7 days / 6 nights.</p>
       <div class="tabla-scroll">
         <table class="tabla-precios">
           <thead>
-            <tr><th>Temporada</th><th>Fechas</th><th>Habitación doble</th><th>Habitación sencilla</th><th>Menor (2–11 años)</th></tr>
+            <tr><th>Season</th><th>Dates</th><th>Double room</th><th>Single room</th><th>Child (2–11)</th></tr>
           </thead>
           <tbody>
-            <tr><td>Baja</td><td>Mayo – junio, septiembre – noviembre</td><td class="precio">$18,900</td><td class="precio">$26,500</td><td class="precio">$9,900</td></tr>
-            <tr><td>Media</td><td>Enero – abril (excepto Semana Santa)</td><td class="precio">$22,400</td><td class="precio">$31,200</td><td class="precio">$11,500</td></tr>
-            <tr><td>Alta</td><td>Julio – agosto, Semana Santa, diciembre</td><td class="precio">$27,800</td><td class="precio">$38,900</td><td class="precio">$13,900</td></tr>
+            <tr><td>Low</td><td>May – June, September – November</td><td class="precio">$18,900</td><td class="precio">$26,500</td><td class="precio">$9,900</td></tr>
+            <tr><td>Mid</td><td>January – April (except Holy Week)</td><td class="precio">$22,400</td><td class="precio">$31,200</td><td class="precio">$11,500</td></tr>
+            <tr><td>High</td><td>July – August, Holy Week, December</td><td class="precio">$27,800</td><td class="precio">$38,900</td><td class="precio">$13,900</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="extras" style="padding-top:0">
-      <h2>Actividades opcionales</h2>
-      <p class="subtitulo">Precio por persona. Se reservan con tu asesor.</p>
+      <h2>Optional activities</h2>
+      <p class="subtitulo">Price per person. Book them with your advisor.</p>
       <div class="tabla-scroll">
         <table class="tabla-precios">
-          <thead><tr><th>Actividad</th><th>Duración</th><th>Precio</th></tr></thead>
+          <thead><tr><th>Activity</th><th>Duration</th><th>Price</th></tr></thead>
           <tbody>
-            <tr><td>Nado con tiburón ballena (junio – septiembre)</td><td>Día completo</td><td class="precio">$3,200</td></tr>
-            <tr><td>Xcaret Plus con transporte</td><td>Día completo</td><td class="precio">$3,650</td></tr>
-            <tr><td>Snorkel en el Museo Subacuático (MUSA)</td><td>3 horas</td><td class="precio">$1,350</td></tr>
-            <tr><td>Cena romántica en la playa</td><td>2 horas</td><td class="precio">$2,400</td></tr>
-            <tr><td>Ruta de cenotes en cuatrimoto</td><td>5 horas</td><td class="precio">$1,890</td></tr>
+            <tr><td>Swim with whale sharks (June – September)</td><td>Full day</td><td class="precio">$3,200</td></tr>
+            <tr><td>Xcaret Plus with transportation</td><td>Full day</td><td class="precio">$3,650</td></tr>
+            <tr><td>Snorkeling at the Underwater Museum (MUSA)</td><td>3 hours</td><td class="precio">$1,350</td></tr>
+            <tr><td>Romantic dinner on the beach</td><td>2 hours</td><td class="precio">$2,400</td></tr>
+            <tr><td>Cenote route by ATV</td><td>5 hours</td><td class="precio">$1,890</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="codigo">
-        Tu código de descuento por leer el itinerario:
+        Your discount code:
         <strong>HORIZONTE-CUN10</strong>
-        10% de descuento en el paquete. Menciónalo al pedir tu cotización.
-        <p style="margin:16px 0 0"><a class="boton" href="mailto:contacto@viajeshorizonte.com?subject=Cotizaci%C3%B3n%20Canc%C3%BAn%20%E2%80%93%20c%C3%B3digo%20HORIZONTE-CUN10">Cotizar con descuento</a></p>
+        10% off the package. Mention it when you request your quote.
+        <p style="margin:16px 0 0"><a class="boton" href="mailto:contacto@viajeshorizonte.com?subject=Canc%C3%BAn%20quote%20%E2%80%93%20code%20HORIZONTE-CUN10">Get a discounted quote</a></p>
       </div>
     </section>
 
     <div class="banda">
       <section id="curiosidades">
-        <h2>Cosas interesantes de Cancún</h2>
-        <p class="subtitulo">Datos para presumir en tu viaje.</p>
+        <h2>Fun facts about Cancún</h2>
+        <p class="subtitulo">Things to share on your trip.</p>
         <div class="curiosidades">
-          <div class="curiosidad"><h3>🏗️ Una ciudad joven</h3><p>Cancún se fundó oficialmente en 1970 como un proyecto turístico planeado; antes era una isla con pocas decenas de habitantes.</p></div>
-          <div class="curiosidad"><h3>🐍 El descenso de Kukulkán</h3><p>En los equinoccios de primavera y otoño, la luz forma la sombra de una serpiente bajando por la pirámide de Chichén Itzá.</p></div>
-          <div class="curiosidad"><h3>🌊 Un museo bajo el mar</h3><p>El MUSA tiene más de 500 esculturas sumergidas que funcionan como arrecife artificial para corales y peces.</p></div>
-          <div class="curiosidad"><h3>💧 Ríos subterráneos</h3><p>La península de Yucatán no tiene ríos en la superficie: el agua corre bajo tierra y aflora en miles de cenotes.</p></div>
-          <div class="curiosidad"><h3>🐢 Playa de tortugas</h3><p>De mayo a octubre, tortugas marinas anidan en las playas; los hoteles apagan luces para no desorientar a las crías.</p></div>
-          <div class="curiosidad"><h3>⏰ Horario propio</h3><p>Quintana Roo usa su propia zona horaria (UTC−5), una hora adelante de la Ciudad de México, todo el año.</p></div>
+          <div class="curiosidad"><h3>🏗️ A young city</h3><p>Cancún was officially founded in 1970 as a planned tourism project; before that it was an island with only a few dozen residents.</p></div>
+          <div class="curiosidad"><h3>🐍 The descent of Kukulkán</h3><p>On the spring and autumn equinoxes, sunlight forms the shadow of a serpent sliding down the pyramid at Chichén Itzá.</p></div>
+          <div class="curiosidad"><h3>🌊 A museum under the sea</h3><p>MUSA has more than 500 submerged sculptures that work as an artificial reef for corals and fish.</p></div>
+          <div class="curiosidad"><h3>💧 Underground rivers</h3><p>The Yucatán Peninsula has no surface rivers: water flows underground and emerges in thousands of cenotes.</p></div>
+          <div class="curiosidad"><h3>🐢 Turtle beaches</h3><p>From May to October, sea turtles nest on the beaches; hotels dim their lights so hatchlings don't get disoriented.</p></div>
+          <div class="curiosidad"><h3>⏰ Its own time zone</h3><p>Quintana Roo uses UTC−5 all year, one hour ahead of Mexico City.</p></div>
         </div>
       </section>
     </div>
   </div>
 
   <footer>
-    © 2026 Viajes Horizonte · Precios sujetos a disponibilidad y cambios sin previo aviso.
+    © 2026 Horizonte Travel · Prices subject to availability and change without notice.
   </footer>
 
   <script>
-    // Acceso solo desde el PDF y con el formulario lleno: los enlaces del PDF incluyen ?desde=pdf&clave=...
-    // (Esto oculta la sección a quien llega por otro lado; no es una protección real.)
+    // Opens only with the key included in the PDF / Resources links (?desde=pdf&clave=...).
     (function () {
-      var CLAVE = 'cun-2026';
+      var KEY = 'cun-2026';
       var p = new URLSearchParams(location.search);
-      var ok = p.get('desde') === 'pdf' && p.get('clave') === CLAVE;
+      var ok = p.get('desde') === 'pdf' && p.get('clave') === KEY;
       try {
-        if (ok) sessionStorage.setItem('acceso-' + CLAVE, '1');
-        else ok = sessionStorage.getItem('acceso-' + CLAVE) === '1';
+        if (ok) sessionStorage.setItem('acceso-' + KEY, '1');
+        else ok = sessionStorage.getItem('acceso-' + KEY) === '1';
       } catch (e) {}
-      // Además de venir del PDF, hay que haber llenado el formulario.
-      if (ok && !Acceso.registrado()) { location.replace(Acceso.urlCuestionario()); return; }
       document.getElementById(ok ? 'exclusivo' : 'bloqueado').classList.remove('oculto');
     })();
   </script>

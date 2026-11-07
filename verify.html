@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Step 2 · Verify your email</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="access.js"></script>
+  <script>Access.require(1);</script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">Horizonte <span>Travel</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#how-it-works">How it works</a></li>
+      <li><a href="destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="resources.html" data-level="4">Resources</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero chico">
+    <span class="sello">Step 2 of 4</span>
+    <h1>Verify your email</h1>
+    <p>We need to confirm that <strong id="correo"></strong> belongs to you.</p>
+  </header>
+
+  <section>
+    <ol class="stepper">
+      <li class="hecho"><span>✓</span>Account</li>
+      <li class="actual"><span>2</span>Verify email</li>
+      <li><span>3</span>Travel profile</li>
+      <li><span>4</span>Application</li>
+    </ol>
+
+    <p class="aviso oculto" id="aviso-bloqueo"></p>
+
+    <form class="cuestionario" id="formulario" novalidate>
+      <fieldset>
+        <legend>Verification code</legend>
+
+        <!-- Part A: request the code -->
+        <div id="parte-enviar">
+          <p>Press the button and we'll generate a 6-digit verification code for your account.</p>
+          <button type="button" class="boton" id="enviar-codigo">Send me a code</button>
+        </div>
+
+        <!-- Part B: waiting for the code to "arrive" -->
+        <div id="parte-espera" class="oculto">
+          <p class="espera">📨 Your code is on its way… it will arrive in <strong id="cuenta">10</strong> seconds.</p>
+          <div class="barra"><span id="barra-espera"></span></div>
+        </div>
+
+        <!-- Simulated inbox: this is a static site, so the "email" is shown here -->
+        <div class="bandeja oculto" id="bandeja" role="status">
+          <div class="bandeja-cabeza">✉️ New message · Horizonte Travel &lt;no-reply@viajeshorizonte.com&gt;</div>
+          <p>Hi <span id="nombre"></span>, your verification code is:</p>
+          <strong id="codigo-mostrado"></strong>
+          <p class="ayuda">The code expires when you leave this page.</p>
+        </div>
+
+        <!-- Part C: type the code -->
+        <div id="parte-codigo" class="oculto">
+          <div class="campo" style="max-width:280px">
+            <label for="codigo">Enter the 6-digit code <span class="req">*</span></label>
+            <input type="text" id="codigo" name="codigo" inputmode="numeric" maxlength="6" pattern="\d{6}"
+              data-pattern-msg="The code has exactly 6 digits." autocomplete="one-time-code" required>
+            <span class="error"></span>
+          </div>
+          <p class="ayuda">Didn't get it? <button type="button" class="enlace" id="reenviar" disabled>Resend code (<span id="reenviar-cuenta">30</span>s)</button></p>
+        </div>
+      </fieldset>
+
+      <div class="enviar oculto" id="parte-boton">
+        <button type="submit" class="boton" id="boton-enviar">Verify &amp; continue</button>
+      </div>
+    </form>
+
+    <div class="confirmacion" id="ya-hecho">
+      <h2>✓ Your email is verified</h2>
+      <p>Step 2 is complete.</p>
+      <a class="boton" id="seguir" href="preferences.html">Continue</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Horizonte Travel · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a> · <a href="#" id="reiniciar">Reset my progress</a>
+  </footer>
+
+  <script>
+    (function () {
+      var data = Access.data();
+      if (!data.account) return;
+      var form = document.getElementById('formulario');
+      document.getElementById('correo').textContent = data.account.email;
+      document.getElementById('nombre').textContent = data.account.name.split(' ')[0];
+
+      if (Access.level() >= 2) {
+        form.style.display = 'none';
+        document.getElementById('seguir').href = Access.nextStepPage();
+        document.getElementById('ya-hecho').classList.add('visible');
+        return;
+      }
+
+      var $ = function (id) { return document.getElementById(id); };
+      var code = '', attempts = 0;
+
+      function newCode() {
+        return String(Math.floor(100000 + Math.random() * 900000));
+      }
+
+      // Delay 1: "sending" overlay. Delay 2: 10-second wait until the code "arrives".
+      function sendCode() {
+        $('parte-enviar').classList.add('oculto');
+        $('bandeja').classList.add('oculto');
+        Access.processing(['Connecting to the mail server…', 'Generating your code…', 'Sending email…'], 3000)
+          .then(function () {
+            $('parte-espera').classList.remove('oculto');
+            var left = 10;
+            $('cuenta').textContent = left;
+            $('barra-espera').style.width = '0%';
+            var t = setInterval(function () {
+              left--;
+              $('cuenta').textContent = left;
+              $('barra-espera').style.width = ((10 - left) * 10) + '%';
+              if (left > 0) return;
+              clearInterval(t);
+              code = newCode();
+              attempts = 0;
+              $('parte-espera').classList.add('oculto');
+              $('codigo-mostrado').textContent = code;
+              $('bandeja').classList.remove('oculto');
+              $('parte-codigo').classList.remove('oculto');
+              $('parte-boton').classList.remove('oculto');
+              $('codigo').value = '';
+              $('codigo').focus();
+              resendCooldown();
+            }, 1000);
+          });
+      }
+
+      // The resend button only works after 30 seconds.
+      function resendCooldown() {
+        var left = 30, btn = $('reenviar');
+        btn.disabled = true;
+        btn.innerHTML = 'Resend code (<span id="reenviar-cuenta">30</span>s)';
+        var t = setInterval(function () {
+          left--;
+          var span = $('reenviar-cuenta');
+          if (span) span.textContent = left;
+          if (left <= 0) { clearInterval(t); btn.disabled = false; btn.textContent = 'Resend code'; }
+        }, 1000);
+      }
+
+      $('enviar-codigo').addEventListener('click', sendCode);
+      $('reenviar').addEventListener('click', function () {
+        $('parte-codigo').classList.add('oculto');
+        $('parte-boton').classList.add('oculto');
+        sendCode();
+      });
+
+      var validateAll = Access.validator(form);
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validateAll()) return;
+        var input = $('codigo'), err = input.closest('.campo').querySelector('.error');
+        if (input.value !== code) {
+          attempts++;
+          input.classList.add('invalido');
+          if (attempts >= 3) {
+            err.textContent = 'Too many wrong attempts. Please request a new code.';
+            code = '';
+            $('bandeja').classList.add('oculto');
+          } else {
+            err.textContent = 'Incorrect code. ' + (3 - attempts) + ' attempt(s) left.';
+          }
+          return;
+        }
+        $('boton-enviar').disabled = true;
+        Access.processing(['Checking your code…', 'Confirming your email…', 'Unlocking Step 3…'], 3000)
+          .then(function () {
+            Access.save({ level: 2, verifiedAt: new Date().toISOString() });
+            location.href = 'preferences.html';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

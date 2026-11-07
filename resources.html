@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Prices &amp; resources</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="access.js"></script>
+  <!-- Unlocked after Step 4 (traveler application) -->
+  <script>Access.require(4);</script>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">Horizonte <span>Travel</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#how-it-works">How it works</a></li>
+      <li><a href="destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="resources.html" class="activo" data-level="4">Resources</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero chico">
+    <span class="sello">🔓 Full access</span>
+    <h1>Thank you<span id="saludo"></span>!</h1>
+    <p>Here are our prices and all our documents. Open them in your browser or download them.</p>
+  </header>
+
+  <section>
+    <h2>Prices &amp; discount codes</h2>
+    <p class="subtitulo">Seasonal prices, optional activities and your personal discount code for each trip.</p>
+    <div class="viajes">
+      <article class="tarjeta">
+        <div class="imagen cancun">🏝️</div>
+        <div class="contenido">
+          <h3>Cancún, Mexico</h3>
+          <p class="pais">7 days / 6 nights · from $18,900 MXN</p>
+          <div class="acciones">
+            <a class="boton" href="exclusivo/cancun.html?desde=pdf&amp;clave=cun-2026#precios">See prices &amp; discount</a>
+          </div>
+        </div>
+      </article>
+      <article class="tarjeta">
+        <div class="imagen paris">🗼</div>
+        <div class="contenido">
+          <h3>Paris, France</h3>
+          <p class="pais">10 days / 9 nights · from $46,500 MXN</p>
+          <div class="acciones">
+            <a class="boton" href="exclusivo/paris.html?desde=pdf&amp;clave=par-2026#precios">See prices &amp; discount</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="banda">
+    <section>
+      <h2>Itineraries</h2>
+      <p class="subtitulo">Printable and editable itineraries (documents are in Spanish).</p>
+      <div class="documentos">
+        <div class="documento">
+          <div class="tipo pdf">PDF</div>
+          <div class="info"><h3>Itinerary – Cancún, Mexico</h3><p>7 days / 6 nights, with links to prices, promotions and fun facts.</p></div>
+          <div class="acciones">
+            <a class="boton chico" href="pdfs/itinerario-cancun.pdf" target="_blank" rel="noopener">Open</a>
+            <a class="boton chico contorno" href="pdfs/itinerario-cancun.pdf" download>Download</a>
+          </div>
+        </div>
+        <div class="documento">
+          <div class="tipo pdf">PDF</div>
+          <div class="info"><h3>Itinerary – Paris, France</h3><p>10 days / 9 nights, with links to prices, promotions and fun facts.</p></div>
+          <div class="acciones">
+            <a class="boton chico" href="pdfs/itinerario-paris.pdf" target="_blank" rel="noopener">Open</a>
+            <a class="boton chico contorno" href="pdfs/itinerario-paris.pdf" download>Download</a>
+          </div>
+        </div>
+        <div class="documento">
+          <div class="tipo docx">DOCX</div>
+          <div class="info"><h3>Editable itinerary – Cancún</h3><p>Word version with space for your notes for each day.</p></div>
+          <div class="acciones">
+            <a class="boton chico" data-abrir-office href="documentos/itinerario-cancun.docx" target="_blank" rel="noopener">Open</a>
+            <a class="boton chico contorno" href="documentos/itinerario-cancun.docx" download>Download</a>
+          </div>
+        </div>
+        <div class="documento">
+          <div class="tipo docx">DOCX</div>
+          <div class="info"><h3>Editable itinerary – Paris</h3><p>Word version with space for your notes for each day.</p></div>
+          <div class="acciones">
+            <a class="boton chico" data-abrir-office href="documentos/itinerario-paris.docx" target="_blank" rel="noopener">Open</a>
+            <a class="boton chico contorno" href="documentos/itinerario-paris.docx" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Guides &amp; templates</h2>
+    <p class="subtitulo">Free tools to prepare your trip.</p>
+    <div class="documentos">
+      <div class="documento">
+        <div class="tipo docx">DOCX</div>
+        <div class="info"><h3>Packing checklist</h3><p>Word checklist for beach and city trips: clothes, documents, health and tech.</p></div>
+        <div class="acciones">
+          <a class="boton chico" data-abrir-office href="documentos/lista-de-equipaje.docx" target="_blank" rel="noopener">Open</a>
+          <a class="boton chico contorno" href="documentos/lista-de-equipaje.docx" download>Download</a>
+        </div>
+      </div>
+      <div class="documento">
+        <div class="tipo docx">DOCX</div>
+        <div class="info"><h3>Travel requirements &amp; documents</h3><p>Passport, visas, insurance and paperwork for Mexico and Europe.</p></div>
+        <div class="acciones">
+          <a class="boton chico" data-abrir-office href="documentos/requisitos-de-viaje.docx" target="_blank" rel="noopener">Open</a>
+          <a class="boton chico contorno" href="documentos/requisitos-de-viaje.docx" download>Download</a>
+        </div>
+      </div>
+      <div class="documento">
+        <div class="tipo xlsx">XLSX</div>
+        <div class="info"><h3>Budget planner</h3><p>Excel sheet with formulas: enter your expenses and get the total per person.</p></div>
+        <div class="acciones">
+          <a class="boton chico" data-abrir-office href="documentos/planificador-de-presupuesto.xlsx" target="_blank" rel="noopener">Open</a>
+          <a class="boton chico contorno" href="documentos/planificador-de-presupuesto.xlsx" download>Download</a>
+        </div>
+      </div>
+      <div class="documento">
+        <div class="tipo txt">TXT</div>
+        <div class="info"><h3>Useful French phrases</h3><p>Greetings and basic phrases to get around Paris.</p></div>
+        <div class="acciones">
+          <a class="boton chico" href="documentos/frases-utiles-frances.txt" target="_blank" rel="noopener">Open</a>
+          <a class="boton chico contorno" href="documentos/frases-utiles-frances.txt" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Horizonte Travel · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a> · <a href="#" id="reiniciar">Reset my progress</a>
+  </footer>
+
+  <script>
+    (function () {
+      var data = Access.data();
+      if (data.account) document.getElementById('saludo').textContent = ', ' + data.account.name.split(' ')[0];
+
+      // Word and Excel files open in the free Office Online viewer when the site
+      // is published; locally they just download.
+      var isPublic = /^https?:$/.test(location.protocol) &&
+                     !/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+      if (!isPublic) return;
+      document.querySelectorAll('[data-abrir-office]').forEach(function (a) {
+        var abs = new URL(a.getAttribute('href'), location.href).href;
+        a.href = 'https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(abs);
+      });
+    })();
+  </script>
+</body>
+</html>

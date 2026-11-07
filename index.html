@@ -1,190 +1,210 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viajes Horizonte</title>
-  <meta name="description" content="Itinerarios de viaje, guías descargables y asesoría personalizada de Viajes Horizonte.">
+  <title>Horizonte Travel</title>
+  <meta name="description" content="Horizonte Travel: who we are, why travel matters, and how to unlock our itineraries, prices and travel resources.">
   <link rel="stylesheet" href="estilos.css">
-  <script src="acceso.js"></script>
+  <script src="access.js"></script>
 </head>
 <body>
   <nav>
-    <a href="index.html" class="logo">Viajes <span>Horizonte</span></a>
+    <a href="index.html" class="logo">Horizonte <span>Travel</span></a>
     <ul>
-      <li><a href="#inicio" class="activo">Inicio</a></li>
-      <li><a href="#por-que-viajar">Por qué viajar</a></li>
-      <li><a href="#itinerarios">Itinerarios</a></li>
-      <li><a href="#documentos">Recursos</a></li>
-      <li><a href="cuestionario.html" data-si-registrado="recursos.html">Desbloquear 🔓</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#home" class="activo">Home</a></li>
+      <li><a href="#about">About us</a></li>
+      <li><a href="#why-travel">Why travel</a></li>
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="resources.html" data-level="4">Resources</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <header class="hero" id="inicio">
-    <h1>Descubre tu próximo destino</h1>
-    <p>Consulta y descarga los itinerarios completos de nuestros viajes, guías prácticas y plantillas para planear tu aventura.</p>
+  <header class="hero" id="home">
+    <h1>Your next journey starts here</h1>
+    <p>We design trips that change the way you see the world. Join our traveler community in four simple steps to unlock our itineraries, prices and exclusive resources.</p>
     <div class="acciones">
-      <a href="#itinerarios" class="boton">Ver itinerarios</a>
-      <a href="cuestionario.html" class="boton secundario" data-si-registrado="recursos.html">Ver precios y recursos</a>
+      <a href="#how-it-works" class="boton">See how it works</a>
+      <a href="register.html" class="boton secundario" id="hero-cta">Start Step 1</a>
     </div>
   </header>
 
-  <!-- La importancia de viajar -->
+  <!-- About the company -->
+  <section id="about">
+    <h2>About Horizonte Travel</h2>
+    <p class="subtitulo">A Mexico City travel agency built by travelers, for travelers.</p>
+    <div class="acerca">
+      <div>
+        <p>Horizonte Travel was founded in 2011 with one idea: a trip should be planned around the person, not around a catalog. Since then our team of travel advisors has organized beach escapes, cultural tours and once-in-a-lifetime celebrations for families, couples and solo explorers.</p>
+        <p>Every package we offer is tested by our own team first. We negotiate directly with hotels and local guides, so you get fair prices and authentic experiences, and you always have a real person to call if something goes wrong.</p>
+      </div>
+      <ul class="valores">
+        <li><strong>🧭 Personal advice</strong> Every traveler gets a dedicated advisor from quote to return.</li>
+        <li><strong>🛡️ Travel with confidence</strong> 24/7 assistance and insurance options on every trip.</li>
+        <li><strong>🌿 Responsible tourism</strong> We work with local businesses that care for their communities.</li>
+      </ul>
+    </div>
+    <div class="cifras">
+      <div class="cifra"><strong>+2,000</strong><span>travelers served</span></div>
+      <div class="cifra"><strong>15</strong><span>years of experience</span></div>
+      <div class="cifra"><strong>98%</strong><span>would travel with us again</span></div>
+      <div class="cifra"><strong>24/7</strong><span>assistance during your trip</span></div>
+    </div>
+  </section>
+
+  <!-- Why travel -->
   <div class="banda">
-    <section id="por-que-viajar">
-      <h2>La importancia de viajar</h2>
-      <p class="subtitulo">Viajar no es solo tomar vacaciones: es una de las mejores inversiones que puedes hacer en ti mismo. Estas son algunas razones.</p>
+    <section id="why-travel">
+      <h2>Why travel?</h2>
+      <p class="subtitulo">Travel isn't just a vacation: it's one of the best investments you can make in yourself.</p>
 
       <div class="beneficios">
         <article class="beneficio">
           <div class="icono">🧠</div>
-          <h3>Abre la mente</h3>
-          <p>Conocer otras culturas, idiomas y formas de vivir rompe prejuicios y te ayuda a ver el mundo, y tus propios problemas, desde otra perspectiva.</p>
+          <h3>It opens your mind</h3>
+          <p>Meeting other cultures, languages and ways of life breaks prejudices and helps you see the world, and your own problems, from a new perspective.</p>
         </article>
         <article class="beneficio">
           <div class="icono">💆</div>
-          <h3>Reduce el estrés</h3>
-          <p>Salir de la rutina permite descansar de verdad. Muchas personas regresan de un viaje con más energía, mejor ánimo y más creatividad.</p>
+          <h3>It reduces stress</h3>
+          <p>Stepping out of your routine lets you truly rest. Many people come back with more energy, a better mood and more creativity.</p>
         </article>
         <article class="beneficio">
           <div class="icono">🤝</div>
-          <h3>Fortalece relaciones</h3>
-          <p>Las experiencias compartidas con pareja, familia o amigos crean recuerdos que unen más que cualquier objeto material.</p>
+          <h3>It strengthens relationships</h3>
+          <p>Shared experiences with a partner, family or friends create memories that bond more than any material gift.</p>
         </article>
         <article class="beneficio">
           <div class="icono">🌱</div>
-          <h3>Te hace crecer</h3>
-          <p>Resolver imprevistos, orientarte en una ciudad nueva o pedir ayuda en otro idioma desarrolla independencia, paciencia y confianza.</p>
+          <h3>It helps you grow</h3>
+          <p>Solving surprises, finding your way in a new city or asking for help in another language builds independence, patience and confidence.</p>
         </article>
         <article class="beneficio">
           <div class="icono">📚</div>
-          <h3>Aprendes de verdad</h3>
-          <p>La historia, el arte y la geografía se entienden mejor frente a una pirámide maya o dentro del Louvre que en cualquier libro.</p>
+          <h3>You really learn</h3>
+          <p>History, art and geography make more sense in front of a Mayan pyramid or inside the Louvre than in any book.</p>
         </article>
         <article class="beneficio">
           <div class="icono">🌎</div>
-          <h3>Apoya a comunidades</h3>
-          <p>El turismo responsable genera empleo y ayuda a conservar el patrimonio natural y cultural de los lugares que visitas.</p>
+          <h3>It supports communities</h3>
+          <p>Responsible tourism creates jobs and helps preserve the natural and cultural heritage of the places you visit.</p>
         </article>
       </div>
 
       <blockquote class="cita">
-        “El mundo es un libro, y quienes no viajan leen solo una página.”
-        <cite>— Atribuida a San Agustín</cite>
+        “The world is a book, and those who do not travel read only one page.”
+        <cite>— Attributed to Saint Augustine</cite>
       </blockquote>
-
-      <div class="cifras">
-        <div class="cifra"><strong>+2,000</strong><span>viajeros atendidos</span></div>
-        <div class="cifra"><strong>15</strong><span>años de experiencia</span></div>
-        <div class="cifra"><strong>98%</strong><span>volverían a viajar con nosotros</span></div>
-        <div class="cifra"><strong>24/7</strong><span>asistencia durante tu viaje</span></div>
-      </div>
     </section>
   </div>
 
   <section>
-    <h2>Consejos para aprovechar tu viaje</h2>
-    <p class="subtitulo">Planear bien es la mitad de la experiencia.</p>
+    <h2>Tips to make the most of your trip</h2>
+    <p class="subtitulo">Good planning is half the experience.</p>
     <ul class="consejos">
-      <li><strong>Reserva con anticipación:</strong> vuelos y hoteles suelen ser más baratos entre 2 y 4 meses antes.</li>
-      <li><strong>Revisa tus documentos:</strong> confirma la vigencia de tu pasaporte (mínimo 6 meses) y los requisitos de entrada.</li>
-      <li><strong>Contrata un seguro de viajero:</strong> una emergencia médica en el extranjero puede ser muy costosa.</li>
-      <li><strong>Haz un presupuesto:</strong> usa nuestra <a href="recursos.html">plantilla de Excel</a> para no llevarte sorpresas.</li>
-      <li><strong>Viaja ligero:</strong> nuestra <a href="recursos.html">lista de equipaje</a> te ayuda a llevar solo lo necesario.</li>
-      <li><strong>Respeta la cultura local:</strong> aprende algunas palabras del idioma y las costumbres básicas del lugar.</li>
+      <li><strong>Book in advance:</strong> flights and hotels are usually cheaper 2 to 4 months ahead.</li>
+      <li><strong>Check your documents:</strong> make sure your passport is valid for at least 6 more months and review entry requirements.</li>
+      <li><strong>Get travel insurance:</strong> a medical emergency abroad can be very expensive.</li>
+      <li><strong>Set a budget:</strong> members get our Excel budget planner once they reach full access.</li>
+      <li><strong>Pack light:</strong> our packing checklist (unlocked in Step 4) helps you bring only what you need.</li>
+      <li><strong>Respect local culture:</strong> learn a few words of the language and the basic customs.</li>
     </ul>
   </section>
 
-  <!-- Itinerarios -->
+  <!-- Instructions: how to unlock content -->
   <div class="banda">
-    <section id="itinerarios">
-      <h2>Nuestros viajes</h2>
-      <p class="subtitulo">Abre el itinerario en PDF. Dentro encontrarás enlaces a los precios, promociones y datos curiosos, que se desbloquean llenando un formulario rápido.</p>
+    <section id="how-it-works">
+      <h2>How to unlock our content</h2>
+      <p class="subtitulo">Our itineraries, prices and documents are reserved for registered travelers. Complete each step in order; every form you finish unlocks a new part of the site.</p>
 
-      <div class="viajes">
-        <article class="tarjeta">
-          <div class="imagen cancun">🏝️</div>
-          <div class="contenido">
-            <h3>Cancún</h3>
-            <p class="pais">México</p>
-            <ul class="detalles">
-              <li>📅 7 días / 6 noches</li>
-              <li>✈️ Vuelo + hotel todo incluido</li>
-              <li>🌊 Isla Mujeres, Chichén Itzá y Tulum</li>
-            </ul>
-            <p class="nota-pdf">🔒 Precios y código de descuento: dentro del PDF, después de llenar el formulario.</p>
-            <div class="acciones">
-              <a href="pdfs/itinerario-cancun.pdf" target="_blank" rel="noopener" class="boton">Ver itinerario (PDF)</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tarjeta">
-          <div class="imagen paris">🗼</div>
-          <div class="contenido">
-            <h3>París</h3>
-            <p class="pais">Francia</p>
-            <ul class="detalles">
-              <li>📅 10 días / 9 noches</li>
-              <li>✈️ Vuelo + hotel + tours</li>
-              <li>🎨 Louvre, Versalles y crucero por el Sena</li>
-            </ul>
-            <p class="nota-pdf">🔒 Precios y código de descuento: dentro del PDF, después de llenar el formulario.</p>
-            <div class="acciones">
-              <a href="pdfs/itinerario-paris.pdf" target="_blank" rel="noopener" class="boton">Ver itinerario (PDF)</a>
-            </div>
-          </div>
-        </article>
+      <div class="progreso-general">
+        <div class="progreso-texto"><strong id="progreso-num">0 of 4</strong> steps completed</div>
+        <div class="barra"><span id="progreso-barra"></span></div>
       </div>
+
+      <ol class="pasos" id="pasos">
+        <li data-step="1">
+          <div class="paso-num">1</div>
+          <div class="paso-info">
+            <h3>Create your account</h3>
+            <p>Your name, email and country, plus a quick security check where you type a random number.</p>
+            <p class="desbloquea">Unlocks: Step 2</p>
+          </div>
+          <div class="paso-estado"></div>
+        </li>
+        <li data-step="2">
+          <div class="paso-num">2</div>
+          <div class="paso-info">
+            <h3>Verify your email</h3>
+            <p>We generate a 6-digit verification code. Enter it to confirm your account.</p>
+            <p class="desbloquea">Unlocks: Step 3</p>
+          </div>
+          <div class="paso-estado"></div>
+        </li>
+        <li data-step="3">
+          <div class="paso-num">3</div>
+          <div class="paso-info">
+            <h3>Build your travel profile</h3>
+            <p>A three-part form about your travel style, budget and dates.</p>
+            <p class="desbloquea">Unlocks: 🗺️ Destinations &amp; itineraries</p>
+          </div>
+          <div class="paso-estado"></div>
+        </li>
+        <li data-step="4">
+          <div class="paso-num">4</div>
+          <div class="paso-info">
+            <h3>Submit your traveler application</h3>
+            <p>Tell us why you want to travel, pass a second security check and wait while our team reviews it.</p>
+            <p class="desbloquea">Unlocks: 💲 Prices, discount codes and 📄 all downloadable resources</p>
+          </div>
+          <div class="paso-estado"></div>
+        </li>
+      </ol>
+
+      <p class="ayuda" style="text-align:center;margin-top:24px">Your progress is saved on this browser. Each step takes about a minute, and some steps include a short processing wait.</p>
     </section>
   </div>
 
-  <!-- Recursos (bloqueados hasta llenar el formulario) -->
-  <section id="documentos">
-    <h2>Documentos y recursos</h2>
-    <p class="subtitulo" id="texto-recursos">Llena un formulario de 30 segundos para desbloquear los precios de cada viaje y descargar todos estos archivos.</p>
-
-    <div class="vista-previa" id="vista-previa">
-      <div class="documento"><div class="tipo pdf">PDF</div><div class="info"><h3>Itinerarios completos con precios</h3><p>Cancún y París, con enlaces a tarifas, actividades y códigos de descuento.</p></div></div>
-      <div class="documento"><div class="tipo docx">DOCX</div><div class="info"><h3>Itinerarios editables en Word</h3><p>Para agregar tus propias notas a cada día.</p></div></div>
-      <div class="documento"><div class="tipo docx">DOCX</div><div class="info"><h3>Lista de equipaje y requisitos de viaje</h3><p>Checklist y guía de pasaporte, visas y seguro.</p></div></div>
-      <div class="documento"><div class="tipo xlsx">XLSX</div><div class="info"><h3>Planificador de presupuesto</h3><p>Excel con fórmulas que calcula tu total por persona.</p></div></div>
-      <div class="documento"><div class="tipo txt">TXT</div><div class="info"><h3>Frases útiles en francés</h3><p>Para moverte por París sin problemas.</p></div></div>
-      <div class="candado">
-        <div class="icono">🔒</div>
-        <p><strong>Contenido bloqueado</strong><br>Solo te pedimos tu nombre, tu correo y por qué quieres viajar.</p>
-        <a href="cuestionario.html" class="boton" data-si-registrado="recursos.html" id="boton-recursos">Desbloquear ahora</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <section id="contact">
     <div class="cta">
-      <h2>¿Por qué quieres viajar tú?</h2>
-      <p>Cuéntanos en un par de líneas. A cambio te damos acceso a los precios y a todos nuestros documentos.</p>
-      <a href="cuestionario.html" class="boton secundario" data-si-registrado="recursos.html">Contarles y desbloquear</a>
+      <h2>Questions before you start?</h2>
+      <p>Write to us and an advisor will answer within one business day.</p>
+      <a href="mailto:contacto@viajeshorizonte.com" class="boton secundario">contacto@viajeshorizonte.com</a>
     </div>
   </section>
 
-  <footer id="contacto">
-    © 2026 Viajes Horizonte · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a>
+  <footer>
+    © 2026 Horizonte Travel · <a href="mailto:contacto@viajeshorizonte.com">contacto@viajeshorizonte.com</a> · <a href="#" id="reiniciar">Reset my progress</a>
   </footer>
 
   <script>
-    // Si la persona ya llenó el formulario, los botones llevan directo a los recursos.
+    // Shows the status of each step (done / current / locked) based on saved progress.
     (function () {
-      var reg = Acceso.registro();
-      if (!reg) return;
-      document.querySelectorAll('[data-si-registrado]').forEach(function (a) {
-        a.href = a.getAttribute('data-si-registrado');
+      var level = Access.level();
+      document.getElementById('progreso-num').textContent = level + ' of 4';
+      document.getElementById('progreso-barra').style.width = (level / 4 * 100) + '%';
+
+      document.querySelectorAll('#pasos li').forEach(function (li) {
+        var n = +li.getAttribute('data-step');
+        var box = li.querySelector('.paso-estado');
+        if (n <= level) {
+          li.classList.add('hecho');
+          box.innerHTML = '<span class="chip ok">✓ Completed</span>';
+        } else if (n === level + 1) {
+          li.classList.add('actual');
+          box.innerHTML = '<a class="boton chico" href="' + Access.STEPS[n].page + '">Start step ' + n + '</a>';
+        } else {
+          li.classList.add('pendiente');
+          box.innerHTML = '<span class="chip">🔒 Locked</span>';
+        }
       });
-      document.getElementById('vista-previa').classList.add('desbloqueada');
-      document.querySelector('.candado .icono').textContent = '🔓';
-      document.querySelector('.candado p').innerHTML = '<strong>Contenido desbloqueado</strong><br>Gracias por contarnos por qué quieres viajar.';
-      document.getElementById('boton-recursos').textContent = 'Ir a documentos y recursos';
-      document.getElementById('texto-recursos').textContent =
-        '¡Hola, ' + reg.nombre.split(' ')[0] + '! Ya tienes acceso a todos los documentos y a los precios.';
+
+      var cta = document.getElementById('hero-cta');
+      if (level >= 4) { cta.textContent = 'Go to prices & resources'; cta.href = 'resources.html'; }
+      else if (level >= 3) { cta.textContent = 'Continue with Step 4'; cta.href = Access.nextStepPage(); }
+      else if (level > 0) { cta.textContent = 'Continue with Step ' + (level + 1); cta.href = Access.nextStepPage(); }
     })();
   </script>
 </body>

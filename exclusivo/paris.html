@@ -1,112 +1,111 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>París exclusivo</title>
+  <title>Paris · Prices</title>
   <link rel="stylesheet" href="../estilos.css">
-  <script src="../acceso.js"></script>
+  <script src="../access.js"></script>
+  <!-- Prices require full access (all 4 steps) -->
+  <script>Access.require(4);</script>
 </head>
 <body>
   <nav>
-    <a href="../index.html" class="logo">Viajes <span>Horizonte</span></a>
+    <a href="../index.html" class="logo">Horizonte <span>Travel</span></a>
     <ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="../index.html#itinerarios">Itinerarios</a></li>
-      <li><a href="../recursos.html">Recursos</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../destinations.html" data-level="3">Destinations</a></li>
+      <li><a href="../resources.html" data-level="4">Resources</a></li>
     </ul>
   </nav>
 
-  <!-- Se muestra si alguien entra sin venir del PDF -->
+  <!-- Shown when someone arrives without the link from the PDF / resources page -->
   <div class="bloqueado oculto" id="bloqueado">
     <div class="icono">🔒</div>
-    <h2>Sección exclusiva</h2>
-    <p>Esta página solo está disponible desde el itinerario en PDF de París. Abre el PDF y usa los enlaces que aparecen dentro.</p>
-    <a class="boton" href="../pdfs/itinerario-paris.pdf" target="_blank" rel="noopener">Abrir itinerario de París</a>
+    <h2>Exclusive section</h2>
+    <p>This page opens from the links inside the Paris PDF itinerary or from the Resources page.</p>
+    <a class="boton" href="../resources.html">Go to Resources</a>
   </div>
 
   <div id="exclusivo" class="oculto">
     <header class="hero chico paris">
-      <span class="sello">🔓 Acceso exclusivo desde tu itinerario PDF</span>
-      <h1>París: precios y secretos</h1>
-      <p>Tarifas vigentes 2026–2027, promociones y datos curiosos que no encontrarás en el resto del sitio.</p>
+      <span class="sello">🔓 Exclusive access</span>
+      <h1>Paris: prices &amp; secrets</h1>
+      <p>2026–2027 rates, promotions and fun facts you won't find anywhere else on the site.</p>
     </header>
 
     <section id="precios">
-      <h2>Precios del paquete</h2>
-      <p class="subtitulo">Precio por persona en pesos mexicanos (MXN), saliendo de la Ciudad de México. 10 días / 9 noches.</p>
+      <h2>Package prices</h2>
+      <p class="subtitulo">Price per person in Mexican pesos (MXN), departing from Mexico City. 10 days / 9 nights.</p>
       <div class="tabla-scroll">
         <table class="tabla-precios">
           <thead>
-            <tr><th>Temporada</th><th>Fechas</th><th>Habitación doble</th><th>Habitación sencilla</th><th>Menor (2–11 años)</th></tr>
+            <tr><th>Season</th><th>Dates</th><th>Double room</th><th>Single room</th><th>Child (2–11)</th></tr>
           </thead>
           <tbody>
-            <tr><td>Baja</td><td>Noviembre – marzo (excepto fiestas)</td><td class="precio">$46,500</td><td class="precio">$61,900</td><td class="precio">$31,800</td></tr>
-            <tr><td>Media</td><td>Abril – mayo, septiembre – octubre</td><td class="precio">$52,900</td><td class="precio">$70,400</td><td class="precio">$35,600</td></tr>
-            <tr><td>Alta</td><td>Junio – agosto, diciembre</td><td class="precio">$61,300</td><td class="precio">$82,700</td><td class="precio">$41,200</td></tr>
+            <tr><td>Low</td><td>November – March (except holidays)</td><td class="precio">$46,500</td><td class="precio">$61,900</td><td class="precio">$31,800</td></tr>
+            <tr><td>Mid</td><td>April – May, September – October</td><td class="precio">$52,900</td><td class="precio">$70,400</td><td class="precio">$35,600</td></tr>
+            <tr><td>High</td><td>June – August, December</td><td class="precio">$61,300</td><td class="precio">$82,700</td><td class="precio">$41,200</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="extras" style="padding-top:0">
-      <h2>Actividades opcionales</h2>
-      <p class="subtitulo">Precio por persona. Se reservan con tu asesor.</p>
+      <h2>Optional activities</h2>
+      <p class="subtitulo">Price per person. Book them with your advisor.</p>
       <div class="tabla-scroll">
         <table class="tabla-precios">
-          <thead><tr><th>Actividad</th><th>Duración</th><th>Precio</th></tr></thead>
+          <thead><tr><th>Activity</th><th>Duration</th><th>Price</th></tr></thead>
           <tbody>
-            <tr><td>Disneyland París (1 día, 2 parques)</td><td>Día completo</td><td class="precio">$3,900</td></tr>
-            <tr><td>Castillos del Valle del Loira</td><td>Día completo</td><td class="precio">$4,600</td></tr>
-            <tr><td>Show en el Moulin Rouge con champaña</td><td>2 horas</td><td class="precio">$3,300</td></tr>
-            <tr><td>Clase de cocina francesa (croissants y macarons)</td><td>3 horas</td><td class="precio">$2,450</td></tr>
-            <tr><td>Cena en crucero por el Sena</td><td>2.5 horas</td><td class="precio">$2,900</td></tr>
+            <tr><td>Disneyland Paris (1 day, 2 parks)</td><td>Full day</td><td class="precio">$3,900</td></tr>
+            <tr><td>Loire Valley castles</td><td>Full day</td><td class="precio">$4,600</td></tr>
+            <tr><td>Moulin Rouge show with champagne</td><td>2 hours</td><td class="precio">$3,300</td></tr>
+            <tr><td>French cooking class (croissants &amp; macarons)</td><td>3 hours</td><td class="precio">$2,450</td></tr>
+            <tr><td>Dinner cruise on the Seine</td><td>2.5 hours</td><td class="precio">$2,900</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="codigo">
-        Tu código de descuento por leer el itinerario:
+        Your discount code:
         <strong>HORIZONTE-PAR15</strong>
-        15% de descuento en actividades opcionales. Menciónalo al pedir tu cotización.
-        <p style="margin:16px 0 0"><a class="boton" href="mailto:contacto@viajeshorizonte.com?subject=Cotizaci%C3%B3n%20Par%C3%ADs%20%E2%80%93%20c%C3%B3digo%20HORIZONTE-PAR15">Cotizar con descuento</a></p>
+        15% off optional activities. Mention it when you request your quote.
+        <p style="margin:16px 0 0"><a class="boton" href="mailto:contacto@viajeshorizonte.com?subject=Paris%20quote%20%E2%80%93%20code%20HORIZONTE-PAR15">Get a discounted quote</a></p>
       </div>
     </section>
 
     <div class="banda">
       <section id="curiosidades">
-        <h2>Cosas interesantes de París</h2>
-        <p class="subtitulo">Datos para presumir en tu viaje.</p>
+        <h2>Fun facts about Paris</h2>
+        <p class="subtitulo">Things to share on your trip.</p>
         <div class="curiosidades">
-          <div class="curiosidad"><h3>🗼 Una torre temporal</h3><p>La Torre Eiffel se construyó para la Exposición Universal de 1889 y debía desmontarse a los 20 años; se salvó por su utilidad como antena de radio.</p></div>
-          <div class="curiosidad"><h3>📏 Crece en verano</h3><p>Con el calor, el hierro se dilata y la torre puede “crecer” unos 15 centímetros.</p></div>
-          <div class="curiosidad"><h3>🖼️ Imposible verlo todo</h3><p>El Louvre tiene alrededor de 35,000 obras en exhibición; ver cada una 30 segundos te tomaría más de 12 días sin parar.</p></div>
-          <div class="curiosidad"><h3>💀 Otra ciudad bajo tierra</h3><p>Las Catacumbas guardan los restos de unos seis millones de personas en antiguas canteras de piedra caliza.</p></div>
-          <div class="curiosidad"><h3>🗽 La “hermana” de la Estatua de la Libertad</h3><p>En la Isla de los Cisnes, sobre el Sena, hay una réplica más pequeña de la estatua que Francia regaló a EE. UU.</p></div>
-          <div class="curiosidad"><h3>🥖 La baguette es patrimonio</h3><p>En 2022 la UNESCO declaró el saber hacer de la baguette como Patrimonio Cultural Inmaterial de la Humanidad.</p></div>
+          <div class="curiosidad"><h3>🗼 A temporary tower</h3><p>The Eiffel Tower was built for the 1889 World's Fair and was meant to be dismantled after 20 years; it was saved by its usefulness as a radio antenna.</p></div>
+          <div class="curiosidad"><h3>📏 It grows in summer</h3><p>In the heat, the iron expands and the tower can "grow" about 15 centimeters.</p></div>
+          <div class="curiosidad"><h3>🖼️ Impossible to see it all</h3><p>The Louvre displays around 35,000 works; looking at each for 30 seconds would take you more than 12 days non-stop.</p></div>
+          <div class="curiosidad"><h3>💀 A city underground</h3><p>The Catacombs hold the remains of about six million people in old limestone quarries.</p></div>
+          <div class="curiosidad"><h3>🗽 Lady Liberty's "sister"</h3><p>On the Île aux Cygnes, in the Seine, stands a smaller replica of the statue France gave the United States.</p></div>
+          <div class="curiosidad"><h3>🥖 The baguette is heritage</h3><p>In 2022 UNESCO added the craft of baguette-making to its list of Intangible Cultural Heritage.</p></div>
         </div>
       </section>
     </div>
   </div>
 
   <footer>
-    © 2026 Viajes Horizonte · Precios sujetos a disponibilidad y tipo de cambio.
+    © 2026 Horizonte Travel · Prices subject to availability and exchange rates.
   </footer>
 
   <script>
-    // Acceso solo desde el PDF y con el formulario lleno: los enlaces del PDF incluyen ?desde=pdf&clave=...
-    // (Esto oculta la sección a quien llega por otro lado; no es una protección real.)
+    // Opens only with the key included in the PDF / Resources links (?desde=pdf&clave=...).
     (function () {
-      var CLAVE = 'par-2026';
+      var KEY = 'par-2026';
       var p = new URLSearchParams(location.search);
-      var ok = p.get('desde') === 'pdf' && p.get('clave') === CLAVE;
+      var ok = p.get('desde') === 'pdf' && p.get('clave') === KEY;
       try {
-        if (ok) sessionStorage.setItem('acceso-' + CLAVE, '1');
-        else ok = sessionStorage.getItem('acceso-' + CLAVE) === '1';
+        if (ok) sessionStorage.setItem('acceso-' + KEY, '1');
+        else ok = sessionStorage.getItem('acceso-' + KEY) === '1';
       } catch (e) {}
-      // Además de venir del PDF, hay que haber llenado el formulario.
-      if (ok && !Acceso.registrado()) { location.replace(Acceso.urlCuestionario()); return; }
       document.getElementById(ok ? 'exclusivo' : 'bloqueado').classList.remove('oculto');
     })();
   </script>
