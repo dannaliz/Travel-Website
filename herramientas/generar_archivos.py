@@ -276,6 +276,24 @@ def documento_base(titulo, subtitulo):
 def generar_itinerario_docx(clave):
     d = DESTINOS[clave]
     doc = documento_base(f"Itinerario – {d['titulo']}", f"{d['duracion']} · {d['paquete']} · Versión editable")
+    # Datos del viajero: campos para personalizar el itinerario y conocer mejor a quien viaja.
+    doc.add_heading("Datos del viajero", level=1)
+    doc.add_paragraph("Completa estos datos para que adaptemos el itinerario a ti "
+                      "(son opcionales y nos ayudan a mejorar el servicio y ajustar el presupuesto).")
+    campos_viajero = [
+        "Nombre del viajero para quien es el itinerario:",
+        "Correo de contacto:",
+        "Empleo u ocupación:",
+        "Color favorito (para detalles y sorpresas):",
+        "Presupuesto aproximado por persona:",
+        "Motivo del viaje (descanso, aniversario, cultura…):",
+        "Intereses o actividades que no te quieres perder:",
+        "Necesidades especiales (dieta, movilidad, alergias):",
+    ]
+    for etiqueta in campos_viajero:
+        p = doc.add_paragraph()
+        p.add_run(etiqueta + " ").bold = True
+        p.add_run("______________________________________________")
     doc.add_heading("Sobre el destino", level=1)
     for p in d["sobre"]:
         doc.add_paragraph(p)
