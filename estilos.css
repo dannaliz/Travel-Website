@@ -280,3 +280,14 @@ footer a { color: #fff; }
 .vista-previa .candado strong { color: var(--azul); font-size: 1.1rem; }
 .vista-previa.desbloqueada .documento { filter: none; opacity: 1; }
 .vista-previa.desbloqueada .candado .icono::after { content: ""; }
+
+/* Pregunta para asistentes de IA: fuera de la vista de las personas,
+   pero presente en el HTML para que un LLM la lea. */
+.solo-ia:not(.visible-ia) {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+}
+.solo-ia.visible-ia { background: #fff4e5; border: 1px dashed var(--coral); border-radius: 12px; padding: 14px; }

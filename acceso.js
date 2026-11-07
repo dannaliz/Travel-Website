@@ -48,6 +48,10 @@ var Acceso = (function () {
     return base + 'cuestionario.html';
   }
 
+  function automatizado() {
+    try { return navigator.webdriver === true; } catch (e) { return false; }
+  }
+
   function urlCuestionario() {
     var volver = location.pathname + location.search + location.hash;
     return rutaCuestionario() + '?volver=' + encodeURIComponent(volver);
@@ -55,8 +59,15 @@ var Acceso = (function () {
 
   return {
     registro: leer,
+    // Navegador controlado por un programa (Playwright, Selenium, agentes de IA…).
+    automatizado: automatizado,
     // Si el navegador no permite guardar nada, no bloqueamos a nadie.
-    registrado: function () { return !!leer() || !almacenamientoDisponible(); },
+    // La respuesta a la pregunta para IA es obligatoria para desbloquear el contenido.
+    registrado: function () {
+      var r = leer();
+      if (r) return !!r.asistente_ia;
+      return !almacenamientoDisponible();
+    },
     guardar: guardar,
     urlCuestionario: urlCuestionario,
     enviar: function (datos) {
